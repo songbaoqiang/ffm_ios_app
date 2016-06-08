@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>Consumables</key>
+	<dict/>
+	<key>Others</key>
+	<array>
+		<string>ibagmembership</string>
+	</array>
+	<key>SharedSecret</key>
+	<string>ce7dd8198d8f4978b15280c0c881c0e8</string>
+</dict>
+</plist>

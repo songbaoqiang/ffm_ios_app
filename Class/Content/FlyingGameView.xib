@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="10116" systemVersion="15E65" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES">
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="10085"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view contentMode="scaleToFill" id="iN0-l3-epB" customClass="FlyingGameView">
+            <rect key="frame" x="0.0" y="0.0" width="320" height="160"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" text="Lorem ipsum dolor sit er elit lamet, consectetaur cillium adipisicing pecu, sed do " textAlignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="fxh-N4-VjA" customClass="FlyingGameTextView">
+                    <rect key="frame" x="0.0" y="0.0" width="320" height="70"/>
+                    <color key="backgroundColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
+                    <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                    <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                </textView>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="请选择正确的一句话" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="fiz-QK-KeY">
+                    <rect key="frame" x="0.0" y="70" width="320" height="20.5"/>
+                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                    <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                    <nil key="highlightedColor"/>
+                </label>
+                <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" text="Lorem ipsum dolor sit er elit lamet, consectetaur " textAlignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="kcU-J6-PDn" customClass="FlyingGameTextView">
+                    <rect key="frame" x="0.0" y="90.5" width="320" height="69.5"/>
+                    <color key="backgroundColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="72" id="0xA-iF-2cE"/>
+                    </constraints>
+                    <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                    <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                    <variation key="default">
+                        <mask key="constraints">
+                            <exclude reference="0xA-iF-2cE"/>
+                        </mask>
+                    </variation>
+                </textView>
+            </subviews>
+            <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+            <constraints>
+                <constraint firstItem="kcU-J6-PDn" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" id="3CO-IC-UUT"/>
+                <constraint firstAttribute="trailing" secondItem="kcU-J6-PDn" secondAttribute="trailing" id="3o1-Eg-tAF"/>
+                <constraint firstItem="fiz-QK-KeY" firstAttribute="centerY" secondItem="iN0-l3-epB" secondAttribute="centerY" id="Eug-CL-pYY"/>
+                <constraint firstItem="kcU-J6-PDn" firstAttribute="top" secondItem="fiz-QK-KeY" secondAttribute="bottom" id="Hjd-94-E5z"/>
+                <constraint firstAttribute="trailing" secondItem="fiz-QK-KeY" secondAttribute="trailing" id="SW0-D5-U3V"/>
+                <constraint firstAttribute="bottom" secondItem="kcU-J6-PDn" secondAttribute="bottom" id="XqK-0f-XME"/>
+                <constraint firstAttribute="trailing" secondItem="fxh-N4-VjA" secondAttribute="trailing" id="aBS-aN-HLb"/>
+                <constraint firstItem="fxh-N4-VjA" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" id="ofN-iG-CKM"/>
+                <constraint firstItem="fiz-QK-KeY" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" id="puP-Hu-KYt"/>
+                <constraint firstItem="fxh-N4-VjA" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" id="vLS-4v-m2P"/>
+                <constraint firstItem="fiz-QK-KeY" firstAttribute="top" secondItem="fxh-N4-VjA" secondAttribute="bottom" id="xt9-cG-5Rl"/>
+            </constraints>
+            <nil key="simulatedStatusBarMetrics"/>
+            <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
+            <connections>
+                <outlet property="bottomTextView" destination="kcU-J6-PDn" id="Ewq-yb-5ew"/>
+                <outlet property="topTextView" destination="fxh-N4-VjA" id="AB3-nE-8Xt"/>
+            </connections>
+            <point key="canvasLocation" x="282" y="420.5"/>
+        </view>
+    </objects>
+</document>

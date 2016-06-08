@@ -1,0 +1,144 @@
+/* 
+  Localizable.strings
+  FlyingEnglish
+
+  Created by vincent sung on 4/4/2016.
+  Copyright © 2016 BirdEngish. All rights reserved.
+*/
+
+
+//首页
+"Discover"  = "发现";
+"Group"     = "群组";
+"Message"   = "消息";
+"Account"   = "设置";
+
+
+//时间
+"%@ days ago"       =  "%@天前";
+"%@ hours ago"      =  "%@小时前";
+"%@ minutes ago"    =  "%@分钟前";
+"%@ seconds ago"    =  "%@秒前";
+
+// 设置
+"My Service"        = "我的服务";
+"English Tool"      = "我的生词";
+"My Dictionary[%@]"    = "我的生词[%@]";
+"Dictionary"        = "英汉词典";
+"Chat Setting"      = "聊天设置";
+"Clear Cache"       = "清除缓存";
+"Style Setting"     = "风格设置";
+"Service Online"    = "在线咨询";
+
+
+//我的账户
+"Profile"           = "我的账户";
+"Portrait"          = "头像";
+"NickName"          = "昵称";
+"Who am I"          = "简介";
+"Login/Register"    = "登陆｜注册";
+"Login Out"         = "退出，以其它帐号登录";
+"Chat Now"          = "聊天｜沟通";
+
+//购买
+"Member User"       = "年费会员";
+"Member Start:%@"   = "生效时间:%@";
+"Member End:%@"     = "截止时间:%@";
+
+"Price Info:500"    = "500金币:6元";
+"Price Info:2000"   = "2000金币:18元";
+"Price Info:10000"  = "10000金币:68元";
+"Price Info:member" = "年费会员:698元";
+
+"CurrentCount"      = "现有金币";
+"BuyCount"          = "购买金币";
+"AwardCount"        = "奖励金币";
+"ConsumeCount"      = "消费金币";
+
+
+//群
+"Memberships" = "群成员";
+
+"You are not a member of the group!"            = "你不是这个群组的成员!";
+
+"I am applying to join the group!"              = "我要申请成为正式会员";
+"I am applying to join the group:%@"            = "我要申请成为[群组:%@]的正式会员!";
+
+"Your membership is in review..."               = "你的成员资格正在审批中...";
+"You are a member of the group!"                = "你已通过会员资格申请!";
+
+"You are rejected by the group!"                = "你的成员资格被拒绝!";
+"You are rejected by the group! Complain it!"   = "成员资格被拒绝!我要申诉！！";
+"You are rejected by the group! Group Name:%@"   = "成员资格被拒绝!我要申诉！！群组名:%@";
+
+"%@days remaining!"                = "会员资格剩余:%@天!";
+"%@days remaining!Renew it!"       = "剩余%@天,申请续期!";
+"%@days remaining!Group Name:%@"   = "剩余%@天,申请续期!群组名:%@";
+
+"Membership has expired!"          = "你的成员资格已经过期！";
+"Membership has expired! Renew it!" = "资格过期,申请续期!";
+"Membership has expired! Group Name:%@" = "资格过期,申请续期!群组名:%@";
+
+"Your Message has sent to us..."    = "你的信息已经发送,马上处理...";
+
+"Join Now"  =  "申请加入";
+"Reviewing" = "审核中...";
+"Enter Chatroom"  = "开始群聊";
+"Appeal Now"= "我要申诉";
+
+"Free chat is for members only!" ="会员专享:在线咨询｜精华推荐｜会员互动";
+"I need help in the group:%@"    = "我需要咨询／帮助，群组:%@";
+
+"Featured"  = "推荐";
+
+//评论
+"Send" = "发送";
+"Save" = "保存";
+
+//聊天设置
+"Notification ON"      = "新消息提醒";
+"Notification Voice"   = "声音提醒";
+
+"%@ is sending something..."  =  "%@向你发送了消息...";
+
+//档案设置
+"Touch portrait to update it!"    =  "请点击头像图片更新！";
+"Touch nickName to update it!"    =  "请给自己起个昵称吧！";
+"Touch digest to update it!"      =  "请给自己来个简介吧！";
+
+"Take Photo"        = "拍照";
+"Choose From Album" = "从相册选取";
+
+"Cleanning is ok"                 =  "清理缓存成功！";
+"Click the words in the subtitles for translation" = "请点击屏幕的英文字幕,屏幕取词的结果会自动记录在这里，供你学习使用。";
+
+"Attenion Please"   = "友情提醒！";
+"Destructive"       = "确认";
+"Cancel"            = "取消";
+
+"QR Code| Bar Code" = "扫描二维｜条形码";
+"Bounding is ok!"   = "网站账户和手机绑定成果!";
+"Bounding is fail!" = "绑定失败";
+
+//购买年费会员设置
+"I want to purchase year-membership" = "你确认需要购买年费会员资格!";
+"You are a year-member now!"         = "你已经是会员，无需购买会员资格!";
+"In App Purchasing Disabled"         = "请打开购买手机的应用购买功能";
+"Upload your portrait first please!" = "请首先在设置->点击修改头像（昵称）噢";
+
+"I want to enjoy it!" = "我要解锁课程！";
+"No enough coins!"  = "没有足够的金币了：（";
+
+"Unknow erro!"  = "未知错误!";
+
+//视频播放
+"Item cannot be played" = "资源不能被识别";
+"The assets tracks were loaded, but could not be made playable." = "不支持的播放格式";
+
+ //课程
+"share"="分享";
+"help"="求助";
+"detail" ="详情";
+
+
+
