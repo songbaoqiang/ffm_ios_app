@@ -18,8 +18,7 @@
 
 @interface FlyingBuyVC()<
                         UITableViewDataSource,
-                        UITableViewDelegate,
-                        UIViewControllerRestoration>
+                        UITableViewDelegate>
 
 @property (strong, nonatomic) UITableView        *tableView;
 
@@ -28,30 +27,11 @@
 
 @implementation FlyingBuyVC
 
-+ (UIViewController *)viewControllerWithRestorationIdentifierPath:(NSArray *)identifierComponents
-                                                            coder:(NSCoder *)coder
-{
-    UIViewController *vc = [self new];
-    return vc;
-}
-
-- (void)encodeRestorableStateWithCoder:(NSCoder *)coder
-{
-    [super encodeRestorableStateWithCoder:coder];
-}
-
-- (void)decodeRestorableStateWithCoder:(NSCoder *)coder
-{
-    [super decodeRestorableStateWithCoder:coder];
-}
-
 - (id)init
 {
     if ((self = [super init]))
     {
         // Custom initialization
-        self.restorationIdentifier = NSStringFromClass([self class]);
-        self.restorationClass = [self class];
     }
     return self;
 }

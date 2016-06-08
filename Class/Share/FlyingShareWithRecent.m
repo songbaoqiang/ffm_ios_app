@@ -11,28 +11,11 @@
 #import "iFlyingAppDelegate.h"
 #import "NSString+FlyingExtention.h"
 
-@interface FlyingShareWithRecent ()<UIViewControllerRestoration>
+@interface FlyingShareWithRecent ()
 
 @end
 
 @implementation FlyingShareWithRecent
-
-+ (UIViewController *)viewControllerWithRestorationIdentifierPath:(NSArray *)identifierComponents
-                                                            coder:(NSCoder *)coder
-{
-    UIViewController *vc = [self new];
-    return vc;
-}
-
-- (void)encodeRestorableStateWithCoder:(NSCoder *)coder
-{
-    [super encodeRestorableStateWithCoder:coder];
-}
-
-- (void)decodeRestorableStateWithCoder:(NSCoder *)coder
-{
-    [super decodeRestorableStateWithCoder:coder];
-}
 
 - (void)viewDidLoad
 {

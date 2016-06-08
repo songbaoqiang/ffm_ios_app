@@ -36,7 +36,7 @@
 #import "FlyingAuthorCollectionViewCell.h"
 #import "FlyingLoadingCell.h"
 
-@interface FlyingHomeVC ()<UIViewControllerRestoration>
+@interface FlyingHomeVC ()
 {
     NSInteger            _maxNumOfGroups;
     NSInteger            _currentLodingIndex;
@@ -51,48 +51,11 @@
 
 @implementation FlyingHomeVC
 
-+ (UIViewController *)viewControllerWithRestorationIdentifierPath:(NSArray *)identifierComponents
-                                                            coder:(NSCoder *)coder
-{
-    iFlyingAppDelegate *appDelegate = (iFlyingAppDelegate *)[[UIApplication sharedApplication] delegate];
-    
-    if (!appDelegate.homeVC) {
-        
-        appDelegate.homeVC = [self new];
-    }
-    
-    return appDelegate.homeVC;
-}
-
-- (void)encodeRestorableStateWithCoder:(NSCoder *)coder
-{
-    [super encodeRestorableStateWithCoder:coder];
-    
-    if (!CGRectEqualToRect(self.groupTableView.frame,CGRectZero))
-    {
-        [coder encodeCGRect:self.groupTableView.frame forKey:@"self.groupTableView.frame"];
-    }
-}
-
-- (void)decodeRestorableStateWithCoder:(NSCoder *)coder
-{
-    [super decodeRestorableStateWithCoder:coder];
-    
-    CGRect frame = [coder decodeCGRectForKey:@"self.groupTableView.frame"];
-    if (!CGRectEqualToRect(frame,CGRectZero))
-    {
-        self.groupTableView.frame = frame;
-    }
-}
-
 - (id)init
 {
     if ((self = [super init]))
     {
         // Custom initialization
-        self.restorationIdentifier = NSStringFromClass([self class]);
-        self.restorationClass = [self class];
-        
         self.hidesBottomBarWhenPushed = NO;
         
         self.domainID = [FlyingDataManager getAppData].appID;
@@ -136,8 +99,6 @@
         self.coverFlow = [[FlyingCoverView alloc] initWithFrame:loadingRect];
         [self.coverFlow setCoverViewDelegate:self];
         self.groupTableView.tableHeaderView =self.coverFlow;
-        
-        self.groupTableView.restorationIdentifier = self.restorationIdentifier;
         
         NSInteger bottom = [[NSUserDefaults standardUserDefaults] integerForKey:KTabBarHeight];
         self.groupTableView.tableFooterView = [[UIView alloc] initWithFrame:CGRectMake(0, 0, self.groupTableView.frame.size.width, bottom)];

@@ -30,7 +30,7 @@
 #import "FlyingWebViewController.h"
 #import "FlyingLoadingCell.h"
 
-@interface FlyingContentListVC ()<UIViewControllerRestoration>
+@interface FlyingContentListVC ()
 {
     NSInteger            _maxNumOfContents;
     NSInteger            _currentLodingIndex;
@@ -44,106 +44,11 @@
 
 @implementation FlyingContentListVC
 
-+ (UIViewController *)viewControllerWithRestorationIdentifierPath:(NSArray *)identifierComponents
-                                                            coder:(NSCoder *)coder
-{
-    UIViewController *vc = [self new];
-    return vc;
-}
-
-- (void)encodeRestorableStateWithCoder:(NSCoder *)coder
-{
-    [super encodeRestorableStateWithCoder:coder];
-    
-    if (![NSString isBlankString:self.tagString])
-    {
-        [coder encodeObject:self.tagString forKey:@"self.tagString"];
-    }
-    
-    [coder encodeBool:self.NoTagWork forKey:@"self.NoTagWork"];
-    
-    if (![NSString isBlankString:self.contentType])
-    {
-        [coder encodeObject:self.contentType forKey:@"self.contentType"];
-    }
-
-    if (![NSString isBlankString:self.downloadType])
-    {
-        [coder encodeObject:self.downloadType forKey:@"self.downloadType"];
-    }
-    
-    if (![NSString isBlankString:self.recommend])
-    {
-        [coder encodeObject:self.recommend forKey:@"self.recommend"];
-    }
-    
-    if (![NSString isBlankString:self.title])
-    {
-        [coder encodeObject:self.title forKey:@"self.title"];
-    }
-    
-    if (!CGRectEqualToRect(self.contentTableView.frame,CGRectZero))
-    {
-        [coder encodeCGRect:self.contentTableView.frame forKey:@"self.contentTableView.frame"];
-    }
-}
-
-- (void)decodeRestorableStateWithCoder:(NSCoder *)coder
-{
-    [super decodeRestorableStateWithCoder:coder];
-    
-    
-    NSString * tagString =  [coder decodeObjectForKey:@"self.tagString"];
-    if (![NSString isBlankString:tagString])
-    {
-        self.tagString = tagString;
-    }
-    self.NoTagWork = [coder decodeBoolForKey:@"self.NoTagWork"];
-    
-    NSString * contentType = [coder decodeObjectForKey:@"self.contentType"];
-    if (![NSString isBlankString:contentType])
-    {
-        self.contentType = contentType;
-    }
-    
-    NSString * downloadType = [coder decodeObjectForKey:@"self.downloadType"];
-    if (![NSString isBlankString:downloadType])
-    {
-        self.downloadType = downloadType;
-    }
-    
-    NSString *recommend  = [coder decodeObjectForKey:@"self.recommend"];
-    if (![NSString isBlankString:recommend])
-    {
-        self.recommend = recommend;
-    }
-    
-    NSString * title = [coder decodeObjectForKey:@"self.title"];
-    if (![NSString isBlankString:title])
-    {
-        self.title = title;
-    }
-    
-    CGRect frame = [coder decodeCGRectForKey:@"self.contentTableView.frame"];
-    if (!CGRectEqualToRect(frame,CGRectZero))
-    {
-        self.contentTableView.frame = frame;
-    }
-    
-    if (self.tagString ||
-        self.NoTagWork)
-    {
-        [self reloadAll];
-    }
-}
-
 - (id)init
 {
     if ((self = [super init]))
     {
         // Custom initialization
-        self.restorationIdentifier = NSStringFromClass([self class]);
-        self.restorationClass = [self class];
     }
     return self;
 }
@@ -178,9 +83,7 @@
         self.contentTableView.backgroundColor = [UIColor clearColor];
         
         self.contentTableView.tableFooterView = [UIView new];
-        
-        self.contentTableView.restorationIdentifier = self.restorationIdentifier;
-        
+                
         if(NSFoundationVersionNumber > NSFoundationVersionNumber_iOS_8_1)
         {
             self.contentTableView.cellLayoutMarginsFollowReadableWidth = NO;

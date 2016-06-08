@@ -12,7 +12,8 @@
 @implementation FlyingBaseDao
 
 
-- (id)init{
+- (id)init
+{
     if(self = [super init]){
         
         self.workDbQueue           = nil;

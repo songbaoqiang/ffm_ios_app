@@ -104,7 +104,7 @@ static void *SubtitlStatusObserverContext    = &SubtitlStatusObserverContext;
 static void *RateObservationContext          = &RateObservationContext;
 static void *TrackObservationContext         = &TrackObservationContext;
 
-@interface FlyingMediaVC ()<UIViewControllerRestoration,FlyingItemViewDelegate>
+@interface FlyingMediaVC ()<FlyingItemViewDelegate>
 {
     FlyingLessonDAO     *_lessonDAO;
     FlyingLessonData    *_lessonData;
@@ -200,63 +200,12 @@ static void *TrackObservationContext         = &TrackObservationContext;
 
 @implementation FlyingMediaVC
 
-
-+ (UIViewController *)viewControllerWithRestorationIdentifierPath:(NSArray *)identifierComponents
-                                                            coder:(NSCoder *)coder
-{
-    UIViewController *vc = [self new];
-    return vc;
-}
-
-- (void)encodeRestorableStateWithCoder:(NSCoder *)coder
-{
-    [super encodeRestorableStateWithCoder:coder];
-    
-    if (self.thePubLesson) {
-        
-        [coder encodeObject:self.thePubLesson forKey:@"self.thePubLesson"];
-    }
-    
-    if (self.delegate) {
-        
-        [coder encodeObject:self.delegate forKey:@"self.delegate"];
-    }
-    
-    if (self.timestamp>0) {
-
-        [coder encodeDouble:self.timestamp forKey:@"self.timestamp"];
-    }
-}
-
-- (void)decodeRestorableStateWithCoder:(NSCoder *)coder
-{
-    [super decodeRestorableStateWithCoder:coder];
-
-    self.timestamp = [coder decodeDoubleForKey:@"self.timestamp"];
-    self.delegate  = [coder decodeObjectForKey:@"self.delegate"];
-    
-    FlyingPubLessonData * thePubLesson =  [coder decodeObjectForKey:@"self.thePubLesson"];
-    if (thePubLesson)
-    {
-        self.thePubLesson = thePubLesson;
-    }
-    
-    if (self.thePubLesson)
-    {
-        [self initData];
-        [self showLoadingIndicator];
-        [self playVedio];
-    }
-}
-
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
 {
     self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil];
     
     if (self) {
         // Custom initialization
-        self.restorationIdentifier = NSStringFromClass([self class]);
-        self.restorationClass = [self class];
     }
     return self;
 }

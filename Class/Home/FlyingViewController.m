@@ -15,64 +15,17 @@
 #import <CRToast.h>
 #import "NSString+FlyingExtention.h"
 
-@interface FlyingViewController ()<UIViewControllerRestoration>
+@interface FlyingViewController ()
 
 @end
 
 @implementation FlyingViewController
-
-+ (UIViewController *)viewControllerWithRestorationIdentifierPath:(NSArray *)identifierComponents
-                                                            coder:(NSCoder *)coder
-{
-    UIViewController *vc = [self new];
-    return vc;
-}
-
-- (void)encodeRestorableStateWithCoder:(NSCoder *)coder
-{
-    [super encodeRestorableStateWithCoder:coder];
-    
-    if (![NSString isBlankString:self.domainID])
-    {
-        
-        [coder encodeObject:self.domainID forKey:@"self.domainID"];
-    }
-    
-    if (![NSString isBlankString:self.domainType])
-    {
-        
-        [coder encodeObject:self.domainType forKey:@"self.domainType"];
-    }
-    
-    [coder encodeBool:self.hidesBottomBarWhenPushed forKey:@"self.hidesBottomBarWhenPushed"];
-}
-
-- (void)decodeRestorableStateWithCoder:(NSCoder *)coder
-{
-    [super decodeRestorableStateWithCoder:coder];
-    
-    NSString * domainID = [coder decodeObjectForKey:@"self.domainID"];
-    if (![NSString isBlankString:domainID])
-    {
-        self.domainID = domainID;
-    }
-        
-    NSString * domainType =[coder decodeObjectForKey:@"self.domainType"];
-    if (![NSString isBlankString:domainType])
-    {
-        self.domainType = domainType;
-    }
-    
-    self.hidesBottomBarWhenPushed = [coder decodeBoolForKey:@"self.hidesBottomBarWhenPushed"];
-}
 
 - (id)init
 {
     if ((self = [super init]))
     {
         // Custom initialization
-        self.restorationClass = [self class];
-        
         self.hidesBottomBarWhenPushed = YES;
     }
     return self;

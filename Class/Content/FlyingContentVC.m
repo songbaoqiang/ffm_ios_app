@@ -50,7 +50,7 @@
 #import "FlyingSubTitle.h"
 #import "WSCoachMarksView.h"
 
-@interface FlyingContentVC ()<UIViewControllerRestoration>
+@interface FlyingContentVC ()
 {
     //辅助参数
     float                _ratioHeightToW;
@@ -87,73 +87,11 @@
 
 @implementation FlyingContentVC
 
-
-+ (UIViewController *)viewControllerWithRestorationIdentifierPath:(NSArray *)identifierComponents
-                                                            coder:(NSCoder *)coder
-{
-    UIViewController *vc = [self new];
-    return vc;
-}
-
-- (void)encodeRestorableStateWithCoder:(NSCoder *)coder
-{
-    [super encodeRestorableStateWithCoder:coder];
-    
-    if (self.thePubLesson)
-    {
-        [coder encodeObject:self.thePubLesson forKey:@"self.thePubLesson"];
-    }
-
-    if (self.mediaVC)
-    {
-        [coder encodeObject:self.mediaVC forKey:@"self.mediaVC"];
-    }
-    
-    if (self.authorUserData)
-    {
-        [coder encodeObject:self.authorUserData forKey:@"self.authorUserData"];
-    }
-}
-
-- (void)decodeRestorableStateWithCoder:(NSCoder *)coder
-{
-    [super decodeRestorableStateWithCoder:coder];
-    
-    FlyingPubLessonData * thePubLesson =[coder decodeObjectForKey:@"self.thePubLesson"];
-    
-    if (thePubLesson)
-    {
-        self.thePubLesson = thePubLesson;
-    }
-    
-    FlyingUserData * authorUserData = [coder decodeObjectForKey:@"self.authorUserData"];
-
-    if (authorUserData)
-    {
-        self.authorUserData = authorUserData;
-    }
-    
-    FlyingMediaVC * mediaVC = [coder decodeObjectForKey:@"self.mediaVC"];
-    
-    if (mediaVC)
-    {
-        self.mediaVC = mediaVC;
-        self.mediaVC.restorationIdentifier = self.restorationIdentifier;
-    }
-    
-    if (self.thePubLesson) {
-
-        [self commonInit];
-    }    
-}
-
 - (id)init
 {
     if ((self = [super init]))
     {
         // Custom initialization
-        self.restorationIdentifier = NSStringFromClass([self class]);
-        self.restorationClass = [self class];
     }
     return self;
 }
@@ -450,7 +388,6 @@
         self.tableView.separatorColor = [UIColor grayColor];
         
         self.tableView.tableFooterView = [[UIView alloc] initWithFrame:CGRectMake(0, 0, self.tableView.frame.size.width, 1)];
-        self.tableView.restorationIdentifier = self.restorationIdentifier;
         
         if(NSFoundationVersionNumber > NSFoundationVersionNumber_iOS_8_1)
         {
@@ -709,11 +646,10 @@
 
 -(void) playVedio
 {
-    if (!self.mediaVC) {
-        
+    if (!self.mediaVC)
+    {
         self.mediaVC = [[FlyingMediaVC alloc] initWithNibName:@"FlyingMediaVC" bundle:nil];
         self.mediaVC.thePubLesson=self.thePubLesson;
-        self.mediaVC.restorationIdentifier = self.restorationIdentifier;
     }
     
     self.mediaVC.view.frame=self.coverContentView.bounds;

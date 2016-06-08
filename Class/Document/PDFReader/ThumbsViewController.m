@@ -38,8 +38,7 @@
 
 
 @interface ThumbsViewController () <ThumbsMainToolbarDelegate,
-                                    ReaderThumbsViewDelegate,
-                                    UIViewControllerRestoration>
+                                    ReaderThumbsViewDelegate>
 
 @end
 
@@ -79,55 +78,11 @@
 
 #pragma mark UIViewController methods
 
-+ (UIViewController *)viewControllerWithRestorationIdentifierPath:(NSArray *)identifierComponents
-                                                            coder:(NSCoder *)coder
-{
-    UIViewController *vc = [self new];
-    return vc;
-}
-
-- (void)encodeRestorableStateWithCoder:(NSCoder *)coder
-{
-    [super encodeRestorableStateWithCoder:coder];
-    
-    if (document)
-    {
-        [coder encodeObject:document forKey:@"document"];
-    }
-    
-    if (delegate)
-    {
-        [coder encodeObject:delegate forKey:@"delegate"];
-    }
-}
-
-- (void)decodeRestorableStateWithCoder:(NSCoder *)coder
-{
-    [super decodeRestorableStateWithCoder:coder];
-    
-    ReaderDocument *tempDocument = [coder decodeObjectForKey:@"document"];
-    
-    if (tempDocument)
-    {
-        document = tempDocument;
-    }
-    
-    delegate = [coder decodeObjectForKey:@"delegate"];
-    
-    if (delegate && document)
-    {
-        [self loadContent];
-    }
-}
-
 - (id)init
 {
     if ((self = [super init]))
     {
         // Custom initialization
-        self.restorationIdentifier = NSStringFromClass([self class]);
-        self.restorationClass = [self class];
-        
         updateBookmarked = YES; bookmarked = [NSMutableArray new]; // Bookmarked pages
         
         searchMarked = [NSMutableArray new];

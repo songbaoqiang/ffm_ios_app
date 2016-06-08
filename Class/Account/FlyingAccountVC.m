@@ -43,8 +43,7 @@
 #import "WSCoachMarksView.h"
 
 @interface FlyingAccountVC ()<UITableViewDataSource,
-                                UITableViewDelegate,
-                                UIViewControllerRestoration>
+                                UITableViewDelegate>
 {
     NSInteger _wordCount;
 }
@@ -61,48 +60,11 @@
 
 @implementation FlyingAccountVC
 
-+ (UIViewController *)viewControllerWithRestorationIdentifierPath:(NSArray *)identifierComponents
-                                                            coder:(NSCoder *)coder
-{
-    iFlyingAppDelegate *appDelegate = (iFlyingAppDelegate *)[[UIApplication sharedApplication] delegate];
-    
-    if (!appDelegate.accountVC) {
-        
-        appDelegate.accountVC = [self new];
-    }
-    
-    return appDelegate.accountVC;
-}
-
-- (void)encodeRestorableStateWithCoder:(NSCoder *)coder
-{
-    [super encodeRestorableStateWithCoder:coder];
-    
-    if (!CGRectEqualToRect(self.tableView.frame,CGRectZero))
-    {
-        [coder encodeCGRect:self.tableView.frame forKey:@"self.tableView.frame"];
-    }
-}
-
-- (void)decodeRestorableStateWithCoder:(NSCoder *)coder
-{
-    [super decodeRestorableStateWithCoder:coder];
-    
-    CGRect frame = [coder decodeCGRectForKey:@"self.tableView.frame"];
-    if (!CGRectEqualToRect(frame,CGRectZero))
-    {
-        self.tableView.frame = frame;
-    }
-}
-
 - (id)init
 {
     if ((self = [super init]))
     {
         // Custom initialization
-        self.restorationIdentifier = NSStringFromClass([self class]);
-        self.restorationClass = [self class];
-        
         self.hidesBottomBarWhenPushed = NO;
         
         self.domainID = [FlyingDataManager getAppData].appID;

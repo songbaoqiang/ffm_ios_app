@@ -33,7 +33,7 @@
 #import "YALSunnyRefreshControl.h"
 #import "FlyingLoadingCell.h"
 
-@interface FlyingMyGroupsVC ()<UIViewControllerRestoration>
+@interface FlyingMyGroupsVC ()
 {
     NSInteger            _maxNumOfGroups;
     NSInteger            _currentLodingIndex;
@@ -48,48 +48,11 @@
 
 @implementation FlyingMyGroupsVC
 
-+ (UIViewController *)viewControllerWithRestorationIdentifierPath:(NSArray *)identifierComponents
-                                                            coder:(NSCoder *)coder
-{
-    iFlyingAppDelegate *appDelegate = (iFlyingAppDelegate *)[[UIApplication sharedApplication] delegate];
-    
-    if (!appDelegate.myGroupsVC) {
-        
-        appDelegate.myGroupsVC = [self new];
-    }
-    
-    return appDelegate.myGroupsVC;
-}
-
-- (void)encodeRestorableStateWithCoder:(NSCoder *)coder
-{
-    [super encodeRestorableStateWithCoder:coder];
-    
-    if (!CGRectEqualToRect(self.groupTableView.frame,CGRectZero))
-    {
-        [coder encodeCGRect:self.groupTableView.frame forKey:@"self.groupTableView.frame"];
-    }
-}
-
-- (void)decodeRestorableStateWithCoder:(NSCoder *)coder
-{
-    [super decodeRestorableStateWithCoder:coder];
-    
-    CGRect frame = [coder decodeCGRectForKey:@"self.groupTableView.frame"];
-    if (!CGRectEqualToRect(frame,CGRectZero))
-    {
-        self.groupTableView.frame = frame;
-    }
-}
-
 - (id)init
 {
     if ((self = [super init]))
     {
-        // Custom initialization
-        self.restorationIdentifier = NSStringFromClass([self class]);
-        self.restorationClass = [self class];
-        
+        // Custom initialization        
         self.hidesBottomBarWhenPushed = NO;
         
         self.domainID = [FlyingDataManager getAppData].appID;
@@ -119,8 +82,6 @@
         self.groupTableView.delegate = self;
         self.groupTableView.dataSource = self;
         self.groupTableView.backgroundColor = [UIColor clearColor];
-        
-        self.groupTableView.restorationIdentifier = self.restorationIdentifier;
         
         NSInteger bottom = [[NSUserDefaults standardUserDefaults] integerForKey:KTabBarHeight];
         self.groupTableView.tableFooterView = [[UIView alloc] initWithFrame:CGRectMake(0, 0, self.groupTableView.frame.size.width, bottom)];

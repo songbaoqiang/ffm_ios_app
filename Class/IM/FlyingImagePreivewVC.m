@@ -18,7 +18,7 @@
 #import <CRToastManager.h>
 #import "iFlyingAppDelegate.h"
 
-@interface FlyingImagePreivewVC ()<UIViewControllerRestoration>
+@interface FlyingImagePreivewVC ()
 {
     CGFloat lastScale;
     CGRect oldFrame;    //保存图片原来的大小
@@ -33,24 +33,6 @@
 @end
 
 @implementation FlyingImagePreivewVC
-
-+ (UIViewController *)viewControllerWithRestorationIdentifierPath:(NSArray *)identifierComponents
-                                                            coder:(NSCoder *)coder
-{
-    UIViewController *vc = [self new];
-    return vc;
-}
-
-- (void)encodeRestorableStateWithCoder:(NSCoder *)coder
-{
-    [super encodeRestorableStateWithCoder:coder];
-}
-
-- (void)decodeRestorableStateWithCoder:(NSCoder *)coder
-{
-    [super decodeRestorableStateWithCoder:coder];
-}
-
 
 - (void)viewDidLoad
 {

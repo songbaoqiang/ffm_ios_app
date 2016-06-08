@@ -36,8 +36,7 @@
 
 @interface FlyingConversationVC () <RCRealTimeLocationObserver,
                                     RealTimeLocationStatusViewDelegate,
-                                    RCMessageCellDelegate,
-                                    UIViewControllerRestoration>
+                                    RCMessageCellDelegate>
 
 @property (nonatomic, weak)id<RCRealTimeLocationProxy> realTimeLocation;
 @property (nonatomic, strong)RealTimeLocationStatusView *realTimeLocationStatusView;
@@ -48,101 +47,11 @@
 
 @implementation  FlyingConversationVC
 
-
-+ (UIViewController *)viewControllerWithRestorationIdentifierPath:(NSArray *)identifierComponents
-                                                            coder:(NSCoder *)coder
-{
-    UIViewController *vc = [self new];
-    return vc;
-}
-
-- (void)encodeRestorableStateWithCoder:(NSCoder *)coder
-{
-    [super encodeRestorableStateWithCoder:coder];
-    
-    if (![NSString isBlankString:self.title])
-    {
-        [coder encodeObject:self.title forKey:@"self.title"];
-    }
-    
-    if (![NSString isBlankString:self.targetId])
-    {
-        [coder encodeObject:self.targetId forKey:@"self.targetId"];
-    }
-
-    [coder encodeInteger:self.conversationType forKey:@"self.conversationType"];
-        
-    if (![NSString isBlankString:self.domainID]) {
-        
-        [coder encodeObject:self.domainID forKey:@"self.domainID"];
-    }
-    
-    if (![NSString isBlankString:self.domainType]) {
-        
-        [coder encodeObject:self.domainType forKey:@"self.domainType"];
-    }
-}
-
-- (void)decodeRestorableStateWithCoder:(NSCoder *)coder
-{
-    [super decodeRestorableStateWithCoder:coder];
-    
-    NSString * title =[coder decodeObjectForKey:@"self.title"];
-    
-    if (![NSString isBlankString:title])
-    {
-        self.title =title;
-    }
-    
-    self.conversationType = [coder decodeIntegerForKey:@"self.conversationType"];
-//    self.conversationMessageCollectionView = [coder decodeObjectForKey:@"self.conversationMessageCollectionView"];
-    
-    NSString * targetId = [coder decodeObjectForKey:@"self.targetId"];
-    
-    if (![NSString isBlankString:targetId])
-    {
-        self.targetId =targetId;
-    }
-    
-    NSString * domainID = [coder decodeObjectForKey:@"self.domainID"];
-    
-    if (![NSString isBlankString:domainID])
-    {
-        self.domainID = domainID;
-    }
-    
-    NSString * domainType = [coder decodeObjectForKey:@"self.domainType"];
-    
-    if (![NSString isBlankString:domainType])
-    {
-        self.domainType = domainType;
-    }
-    
-    NSArray *messages = [[RCIMClient sharedRCIMClient] getLatestMessages:self.conversationType
-                                                                targetId:self.targetId
-                                                                   count:10];
-    if (messages)
-    {
-        for (RCMessage *message in messages)
-        {
-            RCMessageModel *model = [RCMessageModel modelWithMessage:message];
-            [self.conversationDataRepository addObject:model];
-        }
-    }
-    
-    [self.conversationMessageCollectionView reloadData];
-}
-
 - (id)init
 {
     if ((self = [super init]))
     {
         // Custom initialization
-        self.restorationIdentifier = NSStringFromClass([self class]);
-        self.restorationClass = [self class];
-        
-        self.conversationMessageCollectionView.restorationIdentifier = self.restorationIdentifier;
-        
         self.hidesBottomBarWhenPushed = YES;
     }
     return self;

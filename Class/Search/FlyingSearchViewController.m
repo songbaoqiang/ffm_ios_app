@@ -32,8 +32,7 @@ static NSString * const kFKRSearchBarTableViewControllerDefaultTableViewCellIden
 
 
 @interface FlyingSearchViewController ()<UISearchResultsUpdating,
-                                            UISearchBarDelegate,
-                                            UIViewControllerRestoration>
+                                            UISearchBarDelegate>
 
 @property (strong, nonatomic) UISearchController    *searchController;
 @property (strong, nonatomic) NSMutableArray        *searchResults;
@@ -48,58 +47,11 @@ static NSString * const kFKRSearchBarTableViewControllerDefaultTableViewCellIden
 
 @implementation FlyingSearchViewController
 
-+ (UIViewController *)viewControllerWithRestorationIdentifierPath:(NSArray *)identifierComponents
-                                                            coder:(NSCoder *)coder
-{
-    UIViewController *vc = [self new];
-    return vc;
-}
-
-- (void)encodeRestorableStateWithCoder:(NSCoder *)coder
-{
-    [super encodeRestorableStateWithCoder:coder];
-    
-    if (![NSString isBlankString:self.searchType])
-    {
-        [coder encodeObject:self.searchType forKey:@"self.searchType"];
-    }
-    
-    if (!CGRectEqualToRect(self.tableView.frame,CGRectZero))
-    {
-        [coder encodeCGRect:self.tableView.frame forKey:@"self.tableView.frame"];
-    }
-}
-
-- (void)decodeRestorableStateWithCoder:(NSCoder *)coder
-{
-    [super decodeRestorableStateWithCoder:coder];
-    
-    CGRect frame = [coder decodeCGRectForKey:@"self.tableView.frame"];
-    if (!CGRectEqualToRect(frame,CGRectZero))
-    {
-        self.tableView.frame = frame;
-    }
-    
-    NSString * searchType = [coder decodeObjectForKey:@"self.searchType"];
-    
-    if (![NSString isBlankString:searchType])
-    {
-        self.searchType = searchType;
-    }
-    
-    if (![NSString isBlankString:self.searchType]) {
-
-        [self initDefultData];
-    }    
-}
-
 - (id)init
 {
     if ((self = [super init]))
     {
         // Custom initialization
-        self.restorationIdentifier = NSStringFromClass([self class]);
-        self.restorationClass = [self class];
     }
     return self;
 }

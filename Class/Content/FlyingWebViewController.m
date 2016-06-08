@@ -18,7 +18,7 @@
 
 #import "UIImage+webview.h"
 
-@interface FlyingWebViewController ()<UIViewControllerRestoration,
+@interface FlyingWebViewController ()<
                                         WKNavigationDelegate,
                                         WKUIDelegate,
                                         WKScriptMessageHandler,
@@ -57,71 +57,11 @@
 
 @implementation FlyingWebViewController
 
-+ (UIViewController *)viewControllerWithRestorationIdentifierPath:(NSArray *)identifierComponents
-                                                            coder:(NSCoder *)coder
-{
-    UIViewController *vc = [self new];
-    return vc;
-}
-
-- (void)encodeRestorableStateWithCoder:(NSCoder *)coder
-{
-    [super encodeRestorableStateWithCoder:coder];
-    
-    if (![NSString isBlankString:self.webURL])
-    {
-        [coder encodeObject:self.webURL forKey:@"self.webURL"];
-    }
-    
-    if (self.thePubLesson)
-    {
-        [coder encodeObject:self.thePubLesson forKey:@"self.thePubLesson"];
-    }
-    
-    if (!CGRectEqualToRect(self.webView.frame,CGRectZero))
-    {
-        [coder encodeCGRect:self.webView.frame forKey:@"self.webView.frame"];
-    }
-
-}
-
-- (void)decodeRestorableStateWithCoder:(NSCoder *)coder
-{
-    [super decodeRestorableStateWithCoder:coder];
-    
-    NSString *webURL = [coder decodeObjectForKey:@"self.webURL"];
-    
-    if (![NSString isBlankString:webURL])
-    {
-        self.webURL = webURL;
-    }
-    
-    FlyingPubLessonData * thePubLesson = [coder decodeObjectForKey:@"self.thePubLesson"];
-    if(thePubLesson)
-    {
-        self.thePubLesson = thePubLesson;
-    }
-    
-    CGRect frame = [coder decodeCGRectForKey:@"self.webView.frame"];
-    if (!CGRectEqualToRect(frame,CGRectZero))
-    {
-        self.webView.frame = frame;
-    }
-    
-    if (![NSString isBlankString:self.webURL] ||
-        self.thePubLesson!=nil)
-    {
-        [self loadWebview];
-    }
-}
-
 - (id)init
 {
     if ((self = [super init]))
     {
         // Custom initialization
-        self.restorationIdentifier = NSStringFromClass([self class]);
-        self.restorationClass = [self class];
     }
     return self;
 }
@@ -173,8 +113,6 @@
         self.webView = [[WKWebView alloc] initWithFrame:CGRectMake(0.0f, 0, CGRectGetWidth(self.view.frame),CGRectGetHeight(self.view.frame)-64)
                                           configuration:self.configuration];
         
-        self.webView.restorationIdentifier = self.restorationIdentifier;
-
         // 设置代理
         self.webView.navigationDelegate = self;
         self.webView.UIDelegate = self;

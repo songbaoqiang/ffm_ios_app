@@ -26,7 +26,7 @@
 #import "FlyingUserData.h"
 #import "FlyingProfileVC.h"
 
-@interface FlyingCommentVC ()<UIViewControllerRestoration>
+@interface FlyingCommentVC ()
 {
     NSInteger            _maxNumOfComments;
     NSInteger            _currentLodingIndex;
@@ -40,98 +40,12 @@
 
 @implementation FlyingCommentVC
 
-+ (UIViewController *)viewControllerWithRestorationIdentifierPath:(NSArray *)identifierComponents
-                                                            coder:(NSCoder *)coder
-{
-    UIViewController *vc = [self new];
-    return vc;
-}
-
-- (void)encodeRestorableStateWithCoder:(NSCoder *)coder
-{
-    [super encodeRestorableStateWithCoder:coder];
-    
-    [coder encodeObject:self.title forKey:@"self.title"];
-    
-    if (![NSString isBlankString:self.domainID]) {
-        
-        [coder encodeObject:self.domainID forKey:@"self.domainID"];
-    }
-    
-    if (![NSString isBlankString:self.domainType]) {
-        
-        [coder encodeObject:self.domainType forKey:@"self.domainType"];
-    }
-
-    if (![NSString isBlankString:self.contentID]) {
-        
-        [coder encodeObject:self.contentID forKey:@"self.contentID"];
-    }
-
-    if (![NSString isBlankString:self.contentType]) {
-        
-        [coder encodeObject:self.contentType forKey:@"self.contentType"];
-    }
-    if (![NSString isBlankString:self.commentTitle]) {
-        
-        [coder encodeObject:self.commentTitle forKey:@"self.commentTitle"];
-    }
-}
-
-- (void)decodeRestorableStateWithCoder:(NSCoder *)coder
-{
-    [super decodeRestorableStateWithCoder:coder];
-    
-    NSString * title =  [coder decodeObjectForKey:@"self.title"];
-    if (![NSString isBlankString:title])
-    {
-        self.title = title;
-    }
-    
-    NSString * domainID  = [coder decodeObjectForKey:@"self.domainID"];
-    if (![NSString isBlankString:domainID])
-    {
-        self.domainID = domainID;
-    }
-
-    NSString * domainType = [coder decodeObjectForKey:@"self.domainType"];
-    if (![NSString isBlankString:domainType])
-    {
-        self.domainType = domainType;
-    }
-    
-    NSString * contentID = [coder decodeObjectForKey:@"self.contentID"];
-    if (![NSString isBlankString:contentID])
-    {
-        self.contentID = contentID;
-    }
-    
-    NSString * contentType = [coder decodeObjectForKey:@"self.contentType"];
-    if (![NSString isBlankString:contentType])
-    {
-        self.contentType = contentType;
-    }
-
-    NSString * commentTitle = [coder decodeObjectForKey:@"self.commentTitle"];
-    if (![NSString isBlankString:commentTitle])
-    {
-        self.commentTitle = commentTitle;
-    }
-    
-    if(![NSString isBlankString:self.contentID])
-    {
-        [self reloadAll];
-    }
-}
-
 - (id)init
 {
     self = [super initWithTableViewStyle:UITableViewStylePlain];
-    if (self) {
+    if (self)
+    {
 
-        self.restorationIdentifier = NSStringFromClass([self class]);
-        self.restorationClass = [self class];
-        
         self.hidesBottomBarWhenPushed=YES;
         
         [self commonInit];

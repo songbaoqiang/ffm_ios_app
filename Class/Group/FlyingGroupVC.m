@@ -35,7 +35,7 @@
 #import "FlyingLoadingCell.h"
 #import "WSCoachMarksView.h"
 
-@interface FlyingGroupVC ()<UIViewControllerRestoration>
+@interface FlyingGroupVC ()
 {
     NSInteger            _maxNumOfContents;
     NSInteger            _currentLodingIndex;
@@ -63,58 +63,11 @@
 
 @implementation FlyingGroupVC
 
-+ (UIViewController *)viewControllerWithRestorationIdentifierPath:(NSArray *)identifierComponents
-                                                            coder:(NSCoder *)coder
-{
-    UIViewController *vc = [self new];
-    return vc;
-}
-
-- (void)encodeRestorableStateWithCoder:(NSCoder *)coder
-{
-    [super encodeRestorableStateWithCoder:coder];
-    
-    if (self.groupData)
-    {
-        [coder encodeObject:self.groupData forKey:@"self.groupData"];
-    }
-    
-    if (!CGRectEqualToRect(self.groupStreamTableView.frame,CGRectZero))
-    {
-        [coder encodeCGRect:self.groupStreamTableView.frame forKey:@"self.groupStreamTableView.frame"];
-    }
-}
-
-- (void)decodeRestorableStateWithCoder:(NSCoder *)coder
-{
-    [super decodeRestorableStateWithCoder:coder];
-    
-    FlyingGroupData * groupData = [coder decodeObjectForKey:@"self.groupData"];
-    
-    if (groupData)
-    {
-        self.groupData = groupData;
-    }
-    
-    CGRect frame = [coder decodeCGRectForKey:@"self.groupStreamTableView.frame"];
-    if (!CGRectEqualToRect(frame,CGRectZero))
-    {
-        self.groupStreamTableView.frame = frame;
-    }
-
-    if (self.groupData)
-    {
-        [self reloadAll];
-    }
-}
-
 - (id)init
 {
     if ((self = [super init]))
     {
         // Custom initialization
-        self.restorationIdentifier = NSStringFromClass([self class]);
-        self.restorationClass = [self class];
     }
     return self;
 }
@@ -154,8 +107,6 @@
         
         NSInteger bottom = [[NSUserDefaults standardUserDefaults] integerForKey:KTabBarHeight];
         self.groupStreamTableView.tableFooterView = [[UIView alloc] initWithFrame:CGRectMake(0, 0, self.groupStreamTableView.frame.size.width, bottom)];
-        
-        self.groupStreamTableView.restorationIdentifier = self.restorationIdentifier;
         
         if(NSFoundationVersionNumber > NSFoundationVersionNumber_iOS_8_1)
         {

@@ -34,9 +34,7 @@
                             UIImagePickerControllerDelegate,
                             RSKImageCropViewControllerDelegate,
                             UITableViewDataSource,
-                            UITableViewDelegate,
-                            UIViewControllerRestoration>
-
+                            UITableViewDelegate>
 
 @property (strong, nonatomic) UITableView        *tableView;
 
@@ -49,60 +47,11 @@
 @implementation FlyingProfileVC
 
 
-+ (UIViewController *)viewControllerWithRestorationIdentifierPath:(NSArray *)identifierComponents
-                                                            coder:(NSCoder *)coder
-{
-    UIViewController *vc = [self new];
-    return vc;
-}
-
-- (void)encodeRestorableStateWithCoder:(NSCoder *)coder
-{
-    [super encodeRestorableStateWithCoder:coder];
-
-    if(![NSString isBlankString:self.openUDID])
-    {
-        [coder encodeObject:self.openUDID forKey:@"self.openUDID"];
-    }
-    
-    if(![NSString isBlankString:self.userID])
-    {
-        [coder encodeObject:self.userID forKey:@"self.userID"];
-    }
-}
-
-- (void)decodeRestorableStateWithCoder:(NSCoder *)coder
-{
-    [super decodeRestorableStateWithCoder:coder];
-    
-    NSString * openUDID = [coder decodeObjectForKey:@"self.openUDID"];
-    
-    if (![NSString isBlankString:openUDID])
-    {
-        self.openUDID = openUDID;
-    }
-    
-    NSString * userID = [coder decodeObjectForKey:@"self.userID"];
-    
-    if (![NSString isBlankString:userID])
-    {
-        self.userID = userID;
-    }
-    
-    if (self.openUDID ||
-        self.userID)
-    {
-        [self reloadAll];
-    }
-}
-
 - (id)init
 {
     if ((self = [super init]))
     {
         // Custom initialization
-        self.restorationIdentifier = NSStringFromClass([self class]);
-        self.restorationClass = [self class];
     }
     return self;
 }

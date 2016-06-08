@@ -16,7 +16,7 @@
 #import "FlyingHttpTool.h"
 #import "iFlyingAppDelegate.h"
 
-@interface FlyingTabBarController ()<UIViewControllerRestoration>
+@interface FlyingTabBarController ()
 
 @property (strong, nonatomic) FlyingNavigationController *disCoverTab;
 @property (strong, nonatomic) FlyingNavigationController *myGroupsTab;
@@ -27,36 +27,11 @@
 
 @implementation FlyingTabBarController
 
-
-+ (UIViewController *)viewControllerWithRestorationIdentifierPath:(NSArray *)identifierComponents
-                                                            coder:(NSCoder *)coder
-{
-    FlyingTabBarController *vc = [self new];
-    
-    iFlyingAppDelegate *appDelegate = (iFlyingAppDelegate *)[[UIApplication sharedApplication] delegate];
-    [appDelegate setTabBarController:vc];
-
-    return vc;
-}
-
-- (void)encodeRestorableStateWithCoder:(NSCoder *)coder
-{
-    [super encodeRestorableStateWithCoder:coder];
-}
-
-- (void)decodeRestorableStateWithCoder:(NSCoder *)coder
-{
-    [super decodeRestorableStateWithCoder:coder];
-}
-
 - (id)init
 {
     if ((self = [super init]))
     {
         // Custom initialization
-        self.restorationIdentifier = NSStringFromClass([self class]);
-        self.restorationClass = [self class];
-        
         [self setupTabBar];
     }
     return self;
@@ -78,7 +53,6 @@
         self.disCoverTab.tabBarItem = [[UITabBarItem alloc] initWithTitle:NSLocalizedString(@"Discover",nil)
                                                                image:[UIImage imageNamed:@"Discover"]
                                                                  tag:0];
-        self.disCoverTab.restorationIdentifier = @"disCoverTab";
     }
     
     //群组
@@ -93,9 +67,7 @@
         self.myGroupsTab.tabBarItem = [[UITabBarItem alloc] initWithTitle:NSLocalizedString(@"Group",nil)
                                                                image:[UIImage imageNamed:@"People"]
                                                                  tag:0];
-        self.myGroupsTab.restorationIdentifier = @"myGroupsTab";
     }
-    
     
     //消息
     if (!self.myMessagersTab)
@@ -116,8 +88,6 @@
         self.myMessagersTab.tabBarItem = [[UITabBarItem alloc] initWithTitle:NSLocalizedString(@"Message",nil)
                                                                   image:[UIImage imageNamed:@"Message"]
                                                                     tag:0];
-        
-        self.myMessagersTab.restorationIdentifier = @"myMessagersTab";
     }
     
     //账户
@@ -133,8 +103,6 @@
         self.myAccountTab.tabBarItem = [[UITabBarItem alloc] initWithTitle:NSLocalizedString(@"Account",nil)
                                                                 image:[UIImage imageNamed:@"Account"]
                                                                   tag:0];
-        
-        self.myAccountTab.restorationIdentifier = @"myAccountTab";
     }
     
     self.viewControllers = [NSArray arrayWithObjects:self.disCoverTab,self.myGroupsTab,self.myMessagersTab,self.myAccountTab,nil];

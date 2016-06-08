@@ -17,8 +17,7 @@
 #import "FlyingDataManager.h"
 #import "FlyingUserData.h"
 
-@interface FlyingEditVC ()<ACEExpandableTableViewDelegate,
-                            UIViewControllerRestoration>
+@interface FlyingEditVC ()<ACEExpandableTableViewDelegate>
 {
     CGFloat _cellHeight;
 }
@@ -29,48 +28,11 @@
 
 @implementation FlyingEditVC
 
-+ (UIViewController *)viewControllerWithRestorationIdentifierPath:(NSArray *)identifierComponents
-                                                            coder:(NSCoder *)coder
-{
-    UIViewController *vc = [self new];
-    return vc;
-}
-
-- (void)encodeRestorableStateWithCoder:(NSCoder *)coder
-{
-    [super encodeRestorableStateWithCoder:coder];
-    
-    [coder encodeBool:self.isNickName forKey:@"self.isNickName"];
-    
-    if (![NSString isBlankString:self.someText]) {
-        
-        [coder encodeObject:self.someText forKey:@"self.someText"];
-    }
-}
-
-- (void)decodeRestorableStateWithCoder:(NSCoder *)coder
-{
-    self.isNickName = [coder decodeBoolForKey:@"self.isNickName"];
-    
-    NSString *someText = [coder decodeObjectForKey:@"self.someText"];
-    
-    if (someText)
-    {
-        self.someText = someText;
-    }
-    
-    [super decodeRestorableStateWithCoder:coder];
-}
-
 - (id)init
 {
     if ((self = [super init]))
     {
         // Custom initialization
-        self.restorationIdentifier = NSStringFromClass([self class]);
-        self.restorationClass = [self class];
-        
-        self.tableView.restorationIdentifier = @"edit.tableview";
     }
     return self;
 }

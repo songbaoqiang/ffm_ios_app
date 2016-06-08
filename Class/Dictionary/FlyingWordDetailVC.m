@@ -21,7 +21,7 @@
 #import "FlyingHttpTool.h"
 #import "FlyingNavigationController.h"
 
-@interface FlyingWordDetailVC ()<UIViewControllerRestoration>
+@interface FlyingWordDetailVC ()
 {
     FlyingSoundPlayer                *_soundPlayer;
 }
@@ -30,60 +30,11 @@
 
 @implementation FlyingWordDetailVC
 
-
-+ (UIViewController *)viewControllerWithRestorationIdentifierPath:(NSArray *)identifierComponents
-                                                            coder:(NSCoder *)coder
-{
-    UIViewController *vc = [self new];
-    return vc;
-}
-
-- (void)encodeRestorableStateWithCoder:(NSCoder *)coder
-{
-    [super encodeRestorableStateWithCoder:coder];
-    
-    if (![NSString isBlankString:self.theWord])
-    {
-        [coder encodeObject:self.theWord forKey:@"self.theWord"];
-    }
-    
-    if (![NSString isBlankString:self.showingModle])
-    {
-        [coder encodeObject:self.showingModle forKey:@"self.showingModle"];
-    }
-}
-
-- (void)decodeRestorableStateWithCoder:(NSCoder *)coder
-{
-    [super decodeRestorableStateWithCoder:coder];
-    
-    NSString * theWord = [coder decodeObjectForKey:@"self.theWord"];
-    
-    if (![NSString isBlankString:theWord])
-    {
-        self.theWord = theWord;
-    }
-    
-    NSString * showingModle =  [coder decodeObjectForKey:@"self.showingModle"];
-    
-    if (![NSString isBlankString:showingModle])
-    {
-        self.showingModle = showingModle;
-    }
-    
-    if (![NSString isBlankString:self.theWord])
-    {
-        [self loadWordContent];
-    }
-}
-
 - (id)init
 {
     if ((self = [super init]))
     {
         // Custom initialization
-        self.restorationIdentifier = NSStringFromClass([self class]);
-        self.restorationClass = [self class];
     }
     return self;
 }

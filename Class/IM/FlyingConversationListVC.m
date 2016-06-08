@@ -20,7 +20,7 @@
 
 #define MenuTag  1234
 
-@interface FlyingConversationListVC ()<UIViewControllerRestoration>
+@interface FlyingConversationListVC ()
 
 @property (nonatomic,strong) RCConversationModel *tempModel;
 
@@ -31,62 +31,11 @@
 
 @implementation FlyingConversationListVC
 
-
-+ (UIViewController *)viewControllerWithRestorationIdentifierPath:(NSArray *)identifierComponents
-                                                            coder:(NSCoder *)coder
-{
-    iFlyingAppDelegate *appDelegate = (iFlyingAppDelegate *)[[UIApplication sharedApplication] delegate];
-    
-    if (!appDelegate.messagesVC) {
-        
-        appDelegate.messagesVC = [self new];
-    }
-    
-    return appDelegate.messagesVC;
-}
-
-- (void)encodeRestorableStateWithCoder:(NSCoder *)coder
-{
-    [super encodeRestorableStateWithCoder:coder];
-    
-    if (![NSString isBlankString:self.domainID]) {
-        
-        [coder encodeObject:self.domainID forKey:@"self.domainID"];
-    }
-    
-    if (![NSString isBlankString:self.domainType]) {
-        
-        [coder encodeObject:self.domainType forKey:@"self.domainType"];
-    }
-}
-
-- (void)decodeRestorableStateWithCoder:(NSCoder *)coder
-{
-    [super decodeRestorableStateWithCoder:coder];
-    
-    NSString * domainID = [coder decodeObjectForKey:@"self.domainID"];
-    
-    if (![NSString isBlankString:domainID])
-    {
-        self.domainID = domainID;
-    }
-    
-    NSString * domainType = [coder decodeObjectForKey:@"self.domainType"];
-    
-    if (![NSString isBlankString:domainType])
-    {
-        self.domainType = domainType;
-    }
-}
-
 - (id)init
 {
     if ((self = [super init]))
     {
-        // Custom initialization
-        self.restorationIdentifier = NSStringFromClass([self class]);
-        self.restorationClass = [self class];
-        
+        // Custom initialization        
         self.hidesBottomBarWhenPushed = NO;
         
         self.domainID = [FlyingDataManager getAppData].appID;

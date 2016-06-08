@@ -27,7 +27,7 @@
 #import "iFlyingAppDelegate.h"
 #import "WSCoachMarksView.h"
 
-@interface FlyingWordAbstractVC()<UIViewControllerRestoration>
+@interface FlyingWordAbstractVC()
 {
     UILabel                 *_wordLabel;
     HCSStarRatingView       *_starRatingView;
@@ -48,46 +48,11 @@
 
 @implementation FlyingWordAbstractVC
 
-+ (UIViewController *)viewControllerWithRestorationIdentifierPath:(NSArray *)identifierComponents
-                                                            coder:(NSCoder *)coder
-{
-    UIViewController *vc = [self new];
-    return vc;
-}
-
-- (void)encodeRestorableStateWithCoder:(NSCoder *)coder
-{
-    [super encodeRestorableStateWithCoder:coder];
-    
-    if (self.taskWord)
-    {
-        [coder encodeObject:self.taskWord forKey:@"self.taskWord"];
-    }
-}
-
-- (void)decodeRestorableStateWithCoder:(NSCoder *)coder
-{
-    [super decodeRestorableStateWithCoder:coder];
-    
-    FlyingTaskWordData * taskWord = [coder decodeObjectForKey:@"self.taskWord"];
-    if (taskWord)
-    {
-        self.taskWord = taskWord;
-    }
-    
-    if (self.taskWord)
-    {
-        [self loadWordContent];
-    }
-}
-
 - (id)init
 {
     if ((self = [super init]))
     {
         // Custom initialization
-        self.restorationIdentifier = NSStringFromClass([self class]);
-        self.restorationClass = [self class];
     }
     return self;
 }

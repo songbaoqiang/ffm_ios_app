@@ -101,37 +101,6 @@
 
 @implementation iFlyingAppDelegate
 
-
-- (BOOL)application:(UIApplication *)application shouldSaveApplicationState:(NSCoder *)coder
-{
-    return YES;
-}
-
-- (BOOL)application:(UIApplication *)application shouldRestoreApplicationState:(NSCoder *)coder
-{
-    return YES;
-}
-
-- (void)application:(UIApplication *)application willEncodeRestorableStateWithCoder:(NSCoder *)coder
-{
-    [coder encodeObject:self.window.rootViewController forKey:@"rootVC"];
-}
-
-- (void)application:(UIApplication *)application didDecodeRestorableStateWithCoder:(NSCoder *)coder
-{
-    UIViewController *vc = [coder decodeObjectForKey:@"rootVC"];
-    
-    if (vc)
-    {
-        self.window.rootViewController = vc;
-        
-        if ([vc isKindOfClass:[FlyingTabBarController class]])
-        {
-            self.tabBarController = (FlyingTabBarController*)vc;
-        }
-    }
-}
-
 - (BOOL)application:(UIApplication *)application willFinishLaunchingWithOptions:(NSDictionary *)launchOptions
 {
     //验证OPenUDID
@@ -199,7 +168,6 @@
     [FlyingHttpTool loginRongCloud];
     
     UIWindow * window = [[UIWindow alloc] initWithFrame:[[UIScreen mainScreen] bounds]];
-    window.restorationIdentifier = NSStringFromClass([window class]);
     
     NSData *colorData = [[NSUserDefaults standardUserDefaults] objectForKey:@"backgroundColor"];
     UIColor *backgroundColor = [NSKeyedUnarchiver unarchiveObjectWithData:colorData];

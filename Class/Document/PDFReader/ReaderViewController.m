@@ -80,7 +80,7 @@ enum
 	BIRDMODE_DELETE
 };
 
-@interface ReaderViewController ()<UIViewControllerRestoration,FlyingItemViewDelegate>
+@interface ReaderViewController ()<FlyingItemViewDelegate>
 {
 	ReaderDocument *document;
 
@@ -130,47 +130,11 @@ enum
 
 @implementation ReaderViewController
 
-+ (UIViewController *)viewControllerWithRestorationIdentifierPath:(NSArray *)identifierComponents
-                                                            coder:(NSCoder *)coder
-{
-    UIViewController *vc = [self new];
-    return vc;
-}
-
-- (void)encodeRestorableStateWithCoder:(NSCoder *)coder
-{
-    [super encodeRestorableStateWithCoder:coder];
-    
-    if (![NSString isBlankString:self.lessonID])
-    {
-        [coder encodeObject:self.lessonID forKey:@"self.lessonID"];
-    }
-}
-
-- (void)decodeRestorableStateWithCoder:(NSCoder *)coder
-{
-    [super decodeRestorableStateWithCoder:coder];
-    
-    NSString * lessonID = [coder decodeObjectForKey:@"self.lessonID"];
-    
-    if (![NSString isBlankString:lessonID])
-    {
-        self.lessonID = lessonID;
-    }
-    
-    if (![NSString isBlankString:self.lessonID])
-    {
-        [self loadReaderDocument];
-    }
-}
-
 - (id)init
 {
     if ((self = [super init]))
     {
         // Custom initialization
-        self.restorationIdentifier = NSStringFromClass([self class]);
-        self.restorationClass = [self class];
     }
     return self;
 }
