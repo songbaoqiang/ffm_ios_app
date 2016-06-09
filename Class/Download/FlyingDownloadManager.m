@@ -9,7 +9,6 @@
 #import "FlyingDownloadManager.h"
 #import "shareDefine.h"
 #import "FlyingDownloader.h"
-#import "FlyingNowLessonDAO.h"
 #import "FlyingLessonDAO.h"
 #import "FlyingLessonData.h"
 #import "NSString+FlyingExtention.h"

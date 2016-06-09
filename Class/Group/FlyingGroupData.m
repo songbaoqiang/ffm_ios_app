@@ -29,6 +29,8 @@
     
     [encoder encodeObject:self.gp_member_sum        forKey:@"gp_member_sum"];
     [encoder encodeObject:self.gp_ln_sum            forKey:@"gp_ln_sum"];
+    [encoder encodeObject:self.gp_tag_sum           forKey:@"gp_tag_sum"];
+
 }
 
 -(id)initWithCoder:(NSCoder *)decoder {
@@ -52,6 +54,7 @@
 
         self.gp_member_sum      = [decoder decodeObjectForKey:@"gp_member_sum"];
         self.gp_ln_sum          = [decoder decodeObjectForKey:@"gp_ln_sum"];
+        self.gp_tag_sum          = [decoder decodeObjectForKey:@"gp_tag_sum"];
     }
     
     return self;

@@ -215,16 +215,27 @@
     {
         FlyingShareData * shareData = [[FlyingShareData alloc] init];
         
-        shareData.shareWebURL  = [NSURL URLWithString:self.thePubLesson.shareURL];
-        shareData.title   = self.thePubLesson.title;
-        shareData.digest  = self.thePubLesson.desc;
+        NSString * shareURL = self.thePubLesson.shareURL;
         
-        shareData.imageURL= self.thePubLesson.imageURL;
+        if ([NSString isBlankString:shareURL])
+        {
+            shareURL = self.thePubLesson.contentURL;
+        }
         
-        shareData.image   = [[UIImage imageWithData:[NSData dataWithContentsOfURL:[NSURL URLWithString:shareData.imageURL]]] makeThumbnailOfSize:CGSizeMake(90, 120)];
+        if (![NSString isBlankString:shareURL])
+        {
+            shareData.shareWebURL  = [NSURL URLWithString:shareURL];
+            shareData.title   = self.thePubLesson.title;
+            shareData.digest  = self.thePubLesson.desc;
+            
+            shareData.imageURL= self.thePubLesson.imageURL;
+            
+            shareData.image   = [[UIImage imageWithData:[NSData dataWithContentsOfURL:[NSURL URLWithString:shareData.imageURL]]] makeThumbnailOfSize:CGSizeMake(90, 120)];
+            
+            iFlyingAppDelegate *appDelegate = (iFlyingAppDelegate *)[[UIApplication sharedApplication] delegate];
+            [appDelegate shareContent:shareData fromView:self.actionButton];
         
-        iFlyingAppDelegate *appDelegate = (iFlyingAppDelegate *)[[UIApplication sharedApplication] delegate];
-        [appDelegate shareContent:shareData fromView:self.actionButton];
+        }
     }
     else
     {

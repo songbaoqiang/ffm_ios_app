@@ -18,12 +18,13 @@
 #import "FMDatabaseAdditions.h"
 
 #import "FlyingFileManager.h"
+#import "shareDefine.h"
 
 @implementation FlyingLessonDAO
 
 -(NSString *) setTable:(NSString *)sql
 {
-    return [NSString stringWithFormat:sql,  @"BE_PUB_LESSON"];
+    return [NSString stringWithFormat:sql, BC_lesson_TableName];
 }
 
 - (FMDatabaseQueue *)dbQueue
@@ -54,7 +55,7 @@
                                      ContentURL:      [rs stringForColumn:@"BECONTENTURL"]
                                      SubtitleURL:     [rs stringForColumn:@"BESUBURL"]
                                      PronunciationURL:[rs stringForColumn:@"BEPROURL"]
-                                     Level:           [rs stringForColumn:@"BELEVEL"]
+                                     ShareURL:        [rs stringForColumn:@"BESHAREURL"]
                                      Duration:        [rs doubleForColumn:@"BEDURATION"]
                                      DownloadPercent: [rs doubleForColumn:@"BEDLPERCENT"]
                                      DownloadSate:    [rs boolForColumn:  @"BEDLSTATE"]
@@ -62,7 +63,7 @@
                                      ContentType:     [rs stringForColumn:@"BECONTENTTYPE"]
                                      DownloadType:    [rs stringForColumn:@"BEDOWNLOADTYPE"]
                                      Tag:[rs stringForColumn:@"BETAG"]
-                                     coinPrice:[rs intForColumn:@"BELESSONS"]
+                                     coinPrice:[rs intForColumn:@"BEPRICE"]
                                      webURL:[rs stringForColumn:@"BEWEBURL"]
                                      ISBN:[rs stringForColumn:@"BEISBN"]
                                      relativeURL:nil];
@@ -103,7 +104,7 @@
                                      ContentURL:      [rs stringForColumn:@"BECONTENTURL"]
                                      SubtitleURL:     [rs stringForColumn:@"BESUBURL"]
                                      PronunciationURL:[rs stringForColumn:@"BEPROURL"]
-                                     Level:           [rs stringForColumn:@"BELEVEL"]
+                                     ShareURL:        [rs stringForColumn:@"BESHAREURL"]
                                      Duration:        [rs doubleForColumn:@"BEDURATION"]
                                      DownloadPercent: [rs doubleForColumn:@"BEDLPERCENT"]
                                      DownloadSate:    [rs boolForColumn:  @"BEDLSTATE"]
@@ -111,7 +112,7 @@
                                      ContentType:     [rs stringForColumn:@"BECONTENTTYPE"]
                                      DownloadType:    [rs stringForColumn:@"BEDOWNLOADTYPE"]
                                      Tag:             [rs stringForColumn:@"BETAG"]
-                                     coinPrice:       [rs intForColumn:@"BELESSONS"]
+                                     coinPrice:       [rs intForColumn:@"BEPRICE"]
                                      webURL:          [rs stringForColumn:@"BEWEBURL"]
                                      ISBN:            [rs stringForColumn:@"BEISBN"]
                                      relativeURL:     [rs stringForColumn:@"BERELATIVEURL"]];
@@ -227,7 +228,7 @@
     
     [self.dbQueue inDatabase:^(FMDatabase *db) {
                 
-        [db executeUpdate:[self setTable:@"REPLACE INTO %@ (BELESSONID,BETITLE,BEDESC,BEIMAGEURL,BECONTENTURL,BESUBURL,BEPROURL,BELEVEL,BEDURATION,BEDLPERCENT,BEDLSTATE,BEOFFICIAL,BECONTENTTYPE,BEDOWNLOADTYPE,BETAG,BELESSONS,BEWEBURL,BEISBN,BERELATIVEURL) VALUES (?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?)"],
+        [db executeUpdate:[self setTable:@"REPLACE INTO %@ (BELESSONID,BETITLE,BEDESC,BEIMAGEURL,BECONTENTURL,BESUBURL,BEPROURL,BESHAREURL,BEDURATION,BEDLPERCENT,BEDLSTATE,BEOFFICIAL,BECONTENTTYPE,BEDOWNLOADTYPE,BETAG,BEPRICE,BEWEBURL,BEISBN,BERELATIVEURL) VALUES (?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?)"],
          lessonData.BELESSONID,
          lessonData.BETITLE ,
          lessonData.BEDESC,
@@ -425,7 +426,7 @@
                                      ContentURL:      [rs stringForColumn:@"BECONTENTURL"]
                                      SubtitleURL:     [rs stringForColumn:@"BESUBURL"]
                                      PronunciationURL:[rs stringForColumn:@"BEPROURL"]
-                                     Level:           [rs stringForColumn:@"BELEVEL"]
+                                     ShareURL:        [rs stringForColumn:@"BESHAREURL"]
                                      Duration:        [rs doubleForColumn:@"BEDURATION"]
                                      DownloadPercent: [rs doubleForColumn:@"BEDLPERCENT"]
                                      DownloadSate:    [rs boolForColumn:  @"BEDLSTATE"]
@@ -433,7 +434,7 @@
                                      ContentType:     [rs stringForColumn:@"BECONTENTTYPE"]
                                      DownloadType:    [rs stringForColumn:@"BEDOWNLOADTYPE"]
                                      Tag:             [rs stringForColumn:@"BETAG"]
-                                     coinPrice:       [rs intForColumn:@"BELESSONS"]
+                                     coinPrice:       [rs intForColumn:@"BEPRICE"]
                                      webURL:          [rs stringForColumn:@"BEWEBURL"]
                                      ISBN:            [rs stringForColumn:@"BEISBN"]
                                      relativeURL:     [rs stringForColumn:@"BERELATIVEURL"]];
@@ -451,192 +452,6 @@
     }];
     
     return result;
-}
-
-
-- (BOOL) insertContentType
-{
-    __block BOOL success;
-    
-    [self.dbQueue inDatabase:^(FMDatabase *db) {
-        
-        success = [db executeUpdate:@"ALTER TABLE BE_PUB_LESSON ADD COLUMN BECONTENTTYPE VARCHAR(10)"];
-        
-        if ([db hadError]) {
-            
-            NSLog(@"Err FlyingLessonDAO: insertTimeStamp %d: %@", [db lastErrorCode], [db lastErrorMessage]);
-        }
-    }];
-    
-    return success;
-}
-
-- (BOOL) insertDownloadType
-{
-    __block BOOL success;
-    
-    [self.dbQueue inDatabase:^(FMDatabase *db) {
-        
-        success = [db executeUpdate:@"ALTER TABLE BE_PUB_LESSON ADD COLUMN BEDOWNLOADTYPE VARCHAR(10)"];
-        
-        if ([db hadError]) {
-            
-            NSLog(@"Err FlyingLessonDAO: insertTimeStamp %d: %@", [db lastErrorCode], [db lastErrorMessage]);
-        }
-    }];
-    
-    return success;
-}
-
-
-- (BOOL) insertTag
-{
-    __block BOOL success;
-    
-    [self.dbQueue inDatabase:^(FMDatabase *db) {
-        
-        success = [db executeUpdate:@"ALTER TABLE BE_PUB_LESSON ADD COLUMN BETAG VARCHAR(100)"];
-        
-        if ([db hadError]) {
-            
-            NSLog(@"Err FlyingLessonDAO: insertTimeStamp %d: %@", [db lastErrorCode], [db lastErrorMessage]);
-        }
-    }];
-    
-    return success;
-}
-
-- (BOOL) hasOfficeURL
-{
-    __block BOOL success;
-    
-    [self.dbQueue inDatabase:^(FMDatabase *db) {
-        
-        if ([db columnExists:@"BEWEBURL" inTableWithName:@"BE_PUB_LESSON"])
-        {
-            if ([db hadError]) {
-                NSLog(@"Err FlyingStaticDAO: hasQRBuy %d: %@", [db lastErrorCode], [db lastErrorMessage]);
-            }
-            
-            success = YES;
-        }
-        else{
-            
-            if ([db hadError]) {
-                NSLog(@"Err FlyingStaticDAO: hasQRBuy %d: %@", [db lastErrorCode], [db lastErrorMessage]);
-            }
-            
-            success = NO;
-        }
-    }];
-    
-    return success;
-}
-
-- (BOOL) insertOfficeURL
-{
-    __block BOOL success;
-    
-    [self.dbQueue inDatabase:^(FMDatabase *db) {
-        
-        success = [db executeUpdate:@"ALTER TABLE BE_PUB_LESSON ADD COLUMN BEWEBURL VARCHAR(100)"];
-        
-        if ([db hadError]) {
-            
-            NSLog(@"Err FlyingLessonDAO: insertOfficeURL %d: %@", [db lastErrorCode], [db lastErrorMessage]);
-        }
-    }];
-    
-    return success;
-}
-
-
-- (BOOL) hasISBN
-{
-    __block BOOL success;
-    
-    [self.dbQueue inDatabase:^(FMDatabase *db) {
-        
-        if ([db columnExists:@"BEISBN" inTableWithName:@"BE_PUB_LESSON"])
-        {
-            if ([db hadError]) {
-                NSLog(@"Err FlyingLessonDAO: hasISBN %d: %@", [db lastErrorCode], [db lastErrorMessage]);
-            }
-            
-            success = YES;
-        }
-        else{
-            
-            if ([db hadError]) {
-                NSLog(@"Err FlyingLessonDAO: hasISBN %d: %@", [db lastErrorCode], [db lastErrorMessage]);
-            }
-            
-            success = NO;
-        }
-    }];
-    
-    return success;
-}
-
-- (BOOL) insertISBN
-{
-    __block BOOL success;
-    
-    [self.dbQueue inDatabase:^(FMDatabase *db) {
-        
-        success = [db executeUpdate:@"ALTER TABLE BE_PUB_LESSON ADD COLUMN BEISBN VARCHAR(32)"];
-        
-        if ([db hadError]) {
-            
-            NSLog(@"Err FlyingLessonDAO: insertISBN %d: %@", [db lastErrorCode], [db lastErrorMessage]);
-        }
-    }];
-    
-    return success;
-}
-
-- (BOOL) hasRelativeURL
-{
-    __block BOOL success;
-    
-    [self.dbQueue inDatabase:^(FMDatabase *db) {
-        
-        if ([db columnExists:@"BERELATIVEURL" inTableWithName:@"BE_PUB_LESSON"])
-        {
-            if ([db hadError]) {
-                NSLog(@"Err FlyingLessonDAO: hasRelativeURL %d: %@", [db lastErrorCode], [db lastErrorMessage]);
-            }
-            
-            success = YES;
-        }
-        else{
-            
-            if ([db hadError]) {
-                NSLog(@"Err FlyingLessonDAO: hasRelativeURL %d: %@", [db lastErrorCode], [db lastErrorMessage]);
-            }
-            
-            success = NO;
-        }
-    }];
-    
-    return success;
-}
-
-- (BOOL) insertRelativeURL
-{
-    __block BOOL success;
-    
-    [self.dbQueue inDatabase:^(FMDatabase *db) {
-        
-        success = [db executeUpdate:@"ALTER TABLE BE_PUB_LESSON ADD COLUMN BERELATIVEURL VARCHAR(100)"];
-        
-        if ([db hadError]) {
-            
-            NSLog(@"Err FlyingLessonDAO: insertRelativeURL %d: %@", [db lastErrorCode], [db lastErrorMessage]);
-        }
-    }];
-    
-    return success;
 }
 
 -(void)  clearAll

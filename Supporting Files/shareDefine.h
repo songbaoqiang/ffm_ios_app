@@ -9,6 +9,12 @@
 #ifndef FlyingEnglish_shareDefine_h
 #define FlyingEnglish_shareDefine_h
 
+//数据库表名
+
+#define BC_lesson_TableName    @"FFM_PUB_LESSON"
+#define BC_statistic_TableName @"FFM_STATISTIC"
+#define BC_taskword_TableName  @"FFM_TASK_WORD"
+
 //搜索资源类型
 #define BC_Search_Lesson    @"BC_Search_Lesson"
 #define BC_Search_Word      @"BC_Search_Word"

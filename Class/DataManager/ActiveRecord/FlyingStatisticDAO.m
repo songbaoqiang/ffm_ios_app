@@ -20,7 +20,7 @@
 -(NSString *)setTable:(NSString *)sql
 {
     
-    return [NSString stringWithFormat:sql,  @"BE_STATISTIC"];
+    return [NSString stringWithFormat:sql, BC_statistic_TableName];
 }
 
 - (FMDatabaseQueue *)dbQueue

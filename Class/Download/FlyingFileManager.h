@@ -21,7 +21,6 @@
 + (NSString*)  getMyUserDataDir;
 
 //监控分享的本地文件夹
-- (void) watchDocumentStateNow;
 +(void)  setNotBackUp;
 
 @end

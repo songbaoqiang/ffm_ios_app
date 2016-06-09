@@ -42,7 +42,6 @@
 #import "FlyingLessonData.h"
 #import "FlyingSoundPlayer.h"
 #import "FlyingStatisticDAO.h"
-#import "FlyingTouchDAO.h"
 #import "UICKeyChainStore.h"
 #import "shareDefine.h"
 #import "iFlyingAppDelegate.h"
@@ -54,7 +53,6 @@
 #import "MuPageViewReflow.h"
 #import "MuPageView.h"
 #import "ACMagnifyingGlass.h"
-#import "FlyingNowLessonDAO.h"
 #import "AFHttpTool.h"
 #import "FlyingFileManager.h"
 #import "CGPDFDocument.h"
@@ -107,10 +105,7 @@ enum
     NSString                *_currentPassport;
     dispatch_queue_t         _background_queue;
     
-    FlyingTouchDAO          *_touchDAO;
-    
     FlyingItemView          *_aWordView;
-    
     
     float       _scale; // scale applied to views (only used in reflow mode)
     BOOL        _reflowMode;
@@ -229,8 +224,6 @@ enum
     [self autoRemoveWordView];
     
     //统计相关
-    _touchDAO     = [[FlyingTouchDAO alloc] init];
-    
     [self prepairNLP];
     
     [self playBackgroundIfPossible];
@@ -1027,8 +1020,6 @@ enum
                     currentLessonID =@"BirdEnglishCommonID";
                 }
                 
-                [_touchDAO countPlusWithUserID:_currentPassport LessonID:currentLessonID];
-                
                 //纪录点击单词
                 [self addToucLammaRecord:newWord];
             });
@@ -1212,14 +1203,6 @@ enum
 	if (printInteraction != nil) [printInteraction dismissAnimated:NO]; // Dismiss
 
     [self dismissViewControllerAnimated:YES completion:nil];
-    
-    if (self.playOnline) {
-        
-        dispatch_async(dispatch_get_main_queue(), ^{
-            
-            [[[FlyingNowLessonDAO alloc] init] deleteWithUserID:_currentPassport LessonID:self.lessonID];
-        });
-    }
 }
 
 - (void)tappedInToolbar:(ReaderMainToolbar *)toolbar printButton:(UIButton *)button

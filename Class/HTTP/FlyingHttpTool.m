@@ -22,9 +22,6 @@
 #import "FlyingPubLessonData.h"
 #import "FlyingStatisticData.h"
 #import "FlyingStatisticDAO.h"
-#import "FlyingTouchDAO.h"
-#import "FlyingTouchRecord.h"
-#import "FlyingNowLessonDAO.h"
 #import "FlyingLessonData.h"
 #import "FlyingLessonDAO.h"
 #import "FlyingLessonData.h"
@@ -387,6 +384,7 @@
                 NSDictionary *groupSum = [dic objectForKey:@"gp_stat"];
                 group.gp_member_sum = [groupSum[@"gp_member_sum"] stringValue];
                 group.gp_ln_sum = [groupSum[@"gp_ln_sum"] stringValue];
+                group.gp_tag_sum = [groupSum[@"gp_tag_sum"] stringValue];
                 
                 FlyingGroupUpdateData * updata = [[FlyingGroupUpdateData alloc] init];
                 updata.groupData = group;
@@ -459,7 +457,7 @@
                 NSDictionary *groupSum = [dic objectForKey:@"gp_stat"];
                 group.gp_member_sum = [groupSum[@"gp_member_sum"] stringValue];
                 group.gp_ln_sum = [groupSum[@"gp_ln_sum"] stringValue];
-                
+                group.gp_tag_sum = [groupSum[@"gp_tag_sum"] stringValue];
                 
                 FlyingGroupUpdateData * updata = [[FlyingGroupUpdateData alloc] init];
                 updata.groupData = group;
@@ -533,7 +531,7 @@
                  NSDictionary *groupSum = [dic objectForKey:@"gp_stat"];
                  group.gp_member_sum = [groupSum[@"gp_member_sum"] stringValue];
                  group.gp_ln_sum = [groupSum[@"gp_ln_sum"] stringValue];
-                 
+                 group.gp_tag_sum = [groupSum[@"gp_tag_sum"] stringValue];
                  
                  FlyingGroupUpdateData * updata = [[FlyingGroupUpdateData alloc] init];
                  updata.groupData = group;
@@ -1422,117 +1420,6 @@
                                        //
                                    }];
 
-}
-
-+(void) getStatisticDetailWithOpenID:(NSString*) openudid
-                                 Completion:(void (^)(BOOL result)) completion;
-{
-    NSArray *lessonIDlist = [[[FlyingNowLessonDAO alloc] init] selectIDWithUserID:openudid];
-    
-    FlyingLessonDAO * lessonDao= [[FlyingLessonDAO alloc] init];
-    FlyingTouchDAO * touchDAO = [[FlyingTouchDAO alloc] init];
-    
-    if (lessonIDlist.count==0) {
-        
-        [[NSUserDefaults standardUserDefaults] setBool:YES forKey:@"activeBETouchAccount"];
-    }
-    else{
-        
-        [lessonIDlist enumerateObjectsUsingBlock:^(NSString* lessonID, NSUInteger idx, BOOL *stop) {
-            
-            FlyingLessonData * lessonData=[lessonDao selectWithLessonID:lessonID];
-            
-            if (lessonData.BEOFFICIAL==YES) {
-                
-                //向服务器获取最新课程相关统计数据
-                [AFHttpTool getTouchDataWithOpenID:openudid
-                                         lessonID:lessonID
-                                          success:^(id response) {
-                                              //
-                                              if (response) {
-                                                  
-                                                  NSString * tempStr =[[NSString alloc] initWithData:response encoding:NSUTF8StringEncoding];
-                                                  
-                                                  [touchDAO insertDataForUserID:openudid
-                                                                       LessonID:lessonID
-                                                                     touchTimes:[tempStr integerValue]];
-                                              }
-                                              
-                                              if (idx==lessonIDlist.count-1) {
-                                                  
-                                                  [[NSUserDefaults standardUserDefaults] setBool:YES forKey:@"activeBETouchAccount"];
-                                              }
-                                              
-                                          } failure:^(NSError *err) {
-                                              //
-                                              NSLog(@"getTouchDataForUserID:%@",err.description);
-                                              
-                                          }];
-            }
-        }];
-    }
-}
-
-//向服务器获备份课程消费数据
-+(void) uploadStatisticDetailWithOpenID:(NSString*) openudid
-                                    Completion:(void (^)(BOOL result)) completion;
-{
-    FlyingTouchDAO * touchDAO = [[FlyingTouchDAO alloc] init];
-    NSArray *recordList = [touchDAO selectWithUserID:openudid];
-    
-    __block NSMutableString * updateStr =[NSMutableString new];
-    
-    __block BOOL first=YES;
-    
-    [recordList enumerateObjectsUsingBlock:^(FlyingTouchRecord* toucRecord, NSUInteger idx, BOOL *stop) {
-        
-        if (first) {
-            
-            [updateStr appendFormat:@"%@;%d",toucRecord.BELESSONID,toucRecord.BETOUCHTIMES];
-            
-            first=NO;
-        }
-        else{
-            
-            [updateStr appendFormat:@"|%@;%d",toucRecord.BELESSONID,toucRecord.BETOUCHTIMES];
-        }
-    }];
-    
-    
-    [AFHttpTool upadteLessonTouchWithOpenID:openudid
-                           lessonAndTouch:updateStr
-                                  success:^(id response) {
-                                      //
-                                      if (response) {
-                                          
-                                          NSString * tempStr =[[NSString alloc] initWithData:response encoding:NSUTF8StringEncoding];
-                                          
-                                          if([NSString isPureInt:tempStr]){
-                                              
-                                              NSInteger resultNum =[tempStr integerValue];
-                                              
-                                              //上传课程具体消费值成功
-                                              if(resultNum==1){
-                                                  
-                                                  NSLog(@"上传课程具体消费值成功");
-                                              }
-                                          }
-                                          
-                                          
-                                          if (completion) {
-                                              completion(true);
-                                          }
-                                      }
-                                      
-                                  } failure:^(NSError *err) {
-                                      //
-                                      
-                                      if (completion) {
-                                          completion(false);
-                                      }
-
-                                      NSLog(@"sysLessonTouchWithAccount:%@",err.description);
-                                  }];
 }
 
 //////////////////////////////////////////////////////////////

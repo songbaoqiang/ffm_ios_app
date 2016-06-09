@@ -10,8 +10,6 @@
 
 #import "shareDefine.h"
 
-#import "FlyingNowLessonDAO.h"
-#import "FlyingNowLessonData.h"
 #import "FlyingLessonDAO.h"
 #import "FlyingLessonData.h"
 #import "FlyingItemData.h"
@@ -54,7 +52,7 @@
     [FlyingDBManager prepareDictionary];
     
     //准备用户数据库
-    [FlyingDBManager prepareUserDataBase];
+//    [FlyingDBManager prepareUserDataBase];
 }
 
 // 准备英文字典
@@ -73,151 +71,24 @@
 }
 
 //准备用户数据库
-+ (void)prepareUserDataBase
-{
-    //dbPath： 数据库路径，在dbDir中。
-    NSString *dbPath = [[FlyingFileManager getMyUserDataDir] stringByAppendingPathComponent:BC_FileName_userBase];
-    
-    //如果有直接打开，没有用户纪录文件就从安装文件复制一个用户模板
-    NSFileManager *fileManager = [NSFileManager defaultManager];
-    if (![fileManager fileExistsAtPath:dbPath]){
-        
-        NSString *soureDbpath = [[NSBundle mainBundle] pathForResource:KUserDBResource ofType:KDBType];
-        NSError* error=nil;
-        [fileManager copyItemAtPath:soureDbpath toPath:dbPath error:&error ];
-        if (error!=nil) {
-            NSLog(@"%@", error);
-            NSLog(@"%@", [error userInfo]);
-        }
-    }
-}
-
-+ (void) updataDBForLocal
-{
-    FlyingNowLessonDAO * nowLessonDAO =[[FlyingNowLessonDAO alloc] init];
-    
-    NSString *openID = [FlyingDataManager getOpenUDID];
-    
-    [nowLessonDAO updateDBFromLocal:openID];
-    
-    //得到本地课程详细信息
-    NSString * path = [NSHomeDirectory() stringByAppendingPathComponent:@"Documents"];
-    NSFileManager* mgr = [NSFileManager defaultManager];
-    
-    //用户目录包含的可读内容
-    
-    NSArray* contents = [mgr contentsOfDirectoryAtPath:path error:nil];
-    
-    FlyingLessonDAO * lessonDAO =[[FlyingLessonDAO alloc] init];
-    
-    for (NSString *fileName in contents) {
-        
-        @autoreleasepool {
-            
-            BOOL isMp3 = [NSString checkMp3URL:fileName];
-            BOOL isMp4 = [NSString checkMp4URL:fileName];
-            BOOL isdoc = [NSString checkDocumentURL:fileName];
-            
-            if(isMp4
-               || [NSString checkOtherVedioURL:fileName]
-               || isdoc
-               || isMp3){
-                
-                NSString* filePath = [path stringByAppendingPathComponent:fileName];
-                
-                //本地文件统一这么处理，最关键是保持和官方lessonID的唯一性。
-                NSString * lessonID= [FileHash md5HashOfFileAtPath:filePath];
-                
-                FlyingLessonData * pubLessondata =[lessonDAO   selectWithLessonID:lessonID];
-                
-                //如果没有相关纪录
-                if (!pubLessondata)
-                {
-                    NSString* lessontitle =[[filePath lastPathComponent] stringByDeletingPathExtension];
-                    
-                    NSString * localSrtPath = [lessontitle localSrtURL];
-                    NSString * localCoverPath = [lessontitle localCoverURL];
-                    
-                    UIImage * coverImage=nil;
-                    if (isMp3) {
-                        
-                        if (![[NSFileManager defaultManager] fileExistsAtPath:localCoverPath]){
-                            
-                            coverImage = [FlyingMediaVC thumbnailImageForMp3:[NSURL fileURLWithPath:filePath]];
-                            
-                            if (coverImage) {
-                                
-                                [UIImagePNGRepresentation(coverImage) writeToFile:localCoverPath atomically:YES];
-                            }
-                        }
-                    }
-                    else if(isMp4){
-                        
-                        if (![[NSFileManager defaultManager] fileExistsAtPath:localCoverPath]){
-                            
-                            coverImage = [FlyingMediaVC thumbnailImageForVideo:[NSURL fileURLWithPath:filePath] atTime:10];
-                            
-                            if (coverImage) {
-                                
-                                [UIImagePNGRepresentation(coverImage) writeToFile:localCoverPath atomically:YES];
-                            }
-                        }
-                    }
-                    else if(isdoc)
-                    {
-                        if (![[NSFileManager defaultManager] fileExistsAtPath:localCoverPath]){
-                            
-                            NSString *phrase=@"";
-                            
-                            if ( [NSString checkPDFURL:fileName])
-                            {
-                                coverImage =[ReaderViewController thumbnailImageForPDF:[NSURL fileURLWithPath:filePath]
-                                                                            passWord:phrase];
-                            }
-                            if (coverImage)
-                            {
-                                [UIImagePNGRepresentation(coverImage) writeToFile:localCoverPath atomically:YES];
-                            }
-                        }
-                    }
-                    
-                    NSString * contentType = KContentTypeVideo;
-                    if(isMp3){
-                        
-                        contentType = KContentTypeAudio;
-                    }
-                    else if (isdoc) {
-                        
-                        contentType = KContentTypeText;
-                    }
-                    
-                    pubLessondata =[[FlyingLessonData alloc] initWithLessonID:lessonID
-                                                                   LocalTitle:lessontitle
-                                                              LocalContentURL:filePath
-                                                                  LocalSubURL:localSrtPath
-                                                                LocalCoverURL:localCoverPath
-                                                                  ContentType:contentType
-                                                                 DownloadType:KDownloadTypeNormal
-                                                                          Tag:nil];
-                    [lessonDAO insertWithData:pubLessondata];
-                    
-                }
-                
-                NSString *openID = [FlyingDataManager getOpenUDID];
-                
-                if (![nowLessonDAO selectWithUserID:openID LessonID:lessonID]) {
-                    
-                    FlyingNowLessonData * data = [[FlyingNowLessonData alloc] initWithUserID:openID
-                                                                                    LessonID:lessonID
-                                                                                   TimeStamp:0
-                                                                                  LocalCover:pubLessondata.localURLOfCover];
-                    [nowLessonDAO insertWithData:data];
-                }
-            }
-        }
-    }
-}
-
+//+ (void)prepareUserDataBase
+//{
+//    //dbPath： 数据库路径，在dbDir中。
+//    NSString *dbPath = [[FlyingFileManager getMyUserDataDir] stringByAppendingPathComponent:BC_FileName_userBase];
+//    
+//    //如果有直接打开，没有用户纪录文件就从安装文件复制一个用户模板
+//    NSFileManager *fileManager = [NSFileManager defaultManager];
+//    if (![fileManager fileExistsAtPath:dbPath]){
+//        
+//        NSString *soureDbpath = [[NSBundle mainBundle] pathForResource:KUserDBResource ofType:KDBType];
+//        NSError* error=nil;
+//        [fileManager copyItemAtPath:soureDbpath toPath:dbPath error:&error ];
+//        if (error!=nil) {
+//            NSLog(@"%@", error);
+//            NSLog(@"%@", [error userInfo]);
+//        }
+//    }
+//}
 
 //根据课程更新字典
 + (void) updateBaseDic:(NSString *) lessonID
@@ -250,6 +121,29 @@
     [parser parse];
 }
 
++ (BOOL) isTableOK:(NSString *)tableName withDB:(FMDatabase *)db
+{
+    BOOL isOK = NO;
+    
+    FMResultSet *rs = [db executeQuery:@"select count(*) as 'count' from sqlite_master where type ='table' and name = ?", tableName];
+    while ([rs next])
+    {
+        NSInteger count = [rs intForColumn:@"count"];
+        
+        if (0 == count)
+        {
+            isOK =  NO;
+        }
+        else
+        {
+            isOK = YES;
+        }
+    }
+    [rs close];
+    
+    return isOK;
+}
+
 
 - (FMDatabaseQueue *) shareUserDBQueue
 {
@@ -262,14 +156,44 @@
         NSFileManager *fileManager = [NSFileManager defaultManager];
         if (![fileManager fileExistsAtPath:dbPath]){
             
-            [FlyingDBManager prepareUserDataBase];
+//            [FlyingDBManager prepareUserDataBase];
         }
         
         _userDBQueue = [FMDatabaseQueue databaseQueueWithPath:dbPath];
+        
+        [self CreateUserTable];
     }
     
     return _userDBQueue;
 }
+
+//创建用户存储表
+-(void)CreateUserTable
+{
+    if (_userDBQueue)
+    {
+        [_userDBQueue inDatabase:^(FMDatabase *db){
+            
+            if (![FlyingDBManager isTableOK:BC_lesson_TableName withDB:db])
+            {
+                NSString *createTableSQL = @"CREATE TABLE FFM_PUB_LESSON (BELESSONID VARCHAR(32) PRIMARY KEY  NOT NULL ,BETITLE varchar(20),BEDESC varchar(1600),BEIMAGEURL varchar(100),BECONTENTURL varchar(100),BESUBURL varchar(100),BEDURATION DOUBLE,BESTARTTIME DOUBLE,BEPRICE INTEGER,BEDLPERCENT DOUBLE,BEDLSTATE BOOLEAN,BEOFFICIAL BOOLEAN,BEPROURL VARCHAR(100),BESHAREURL VARCHAR(100), BECONTENTTYPE VARCHAR(10), BEDOWNLOADTYPE VARCHAR(10), BETAG VARCHAR(100), BEWEBURL VARCHAR(100), BEISBN VARCHAR(32), BERELATIVEURL VARCHAR(100))";
+                [db executeUpdate:createTableSQL];
+            }
+            if (![FlyingDBManager isTableOK:BC_statistic_TableName withDB:db])
+            {
+                NSString *createTableSQL = @"CREATE TABLE FFM_STATISTIC (BEUSERID varchar(40) PRIMARY KEY  NOT NULL ,BETOUCHCOUNT INTEGER NOT NULL  DEFAULT (0) ,BEMONEYCOUNT INTEGER NOT NULL  DEFAULT (0) ,BEGIFTCOUNT INTEGER NOT NULL  DEFAULT (0) ,BETIMES INTEGER,BEQRCOUNT INTEGER NOT NULL  DEFAULT (0) ,BETIMESTAMP VARCHAR(50) NOT NULL  DEFAULT (0) )";
+                [db executeUpdate:createTableSQL];
+            }
+            
+            if (![FlyingDBManager isTableOK:BC_taskword_TableName withDB:db])
+            {
+                NSString *createTableSQL = @"CREATE TABLE FFM_TASK_WORD (BEUSERID varchar(40) NOT NULL ,BEWORD VARCHAR(32) NOT NULL  DEFAULT (null) ,BESENTENCEID VARCHAR(32),BELESSONID VARCHAR(32),BETIME INTEGER,PRIMARY KEY (BEUSERID,BEWORD) )";
+                [db executeUpdate:createTableSQL];
+            }
+        }];
+    }
+}
+
 
 - (void) closeUserDBQueue
 {

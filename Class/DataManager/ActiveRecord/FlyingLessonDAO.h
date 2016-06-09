@@ -32,18 +32,6 @@
 - (void) updateDowloadStateOffine;
 - (id)   selectWithWaittingDownload;
 
-
-- (BOOL) insertContentType;
-- (BOOL) insertDownloadType;
-- (BOOL) insertTag;
-- (BOOL) insertOfficeURL;
-- (BOOL) insertISBN;
-
-- (BOOL) hasOfficeURL;
-- (BOOL) hasISBN;
-
-- (BOOL) hasRelativeURL;
-- (BOOL) insertRelativeURL;
 -(void)  clearAll;
 
 @end

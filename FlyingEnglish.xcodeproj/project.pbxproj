@@ -57,16 +57,6 @@
 		8212F4311C321B8E009C9F86 /* FlyingLessonData.m in Sources */ = {isa = PBXBuildFile; fileRef = 8212F3DB1C321B8E009C9F86 /* FlyingLessonData.m */; };
 		8212F4321C321B8E009C9F86 /* FlyingLessonData.m in Sources */ = {isa = PBXBuildFile; fileRef = 8212F3DB1C321B8E009C9F86 /* FlyingLessonData.m */; };
 		8212F4331C321B8E009C9F86 /* FlyingLessonData.m in Sources */ = {isa = PBXBuildFile; fileRef = 8212F3DB1C321B8E009C9F86 /* FlyingLessonData.m */; };
-		8212F4341C321B8E009C9F86 /* FlyingNowLessonDAO.m in Sources */ = {isa = PBXBuildFile; fileRef = 8212F3DD1C321B8E009C9F86 /* FlyingNowLessonDAO.m */; };
-		8212F4351C321B8E009C9F86 /* FlyingNowLessonDAO.m in Sources */ = {isa = PBXBuildFile; fileRef = 8212F3DD1C321B8E009C9F86 /* FlyingNowLessonDAO.m */; };
-		8212F4361C321B8E009C9F86 /* FlyingNowLessonDAO.m in Sources */ = {isa = PBXBuildFile; fileRef = 8212F3DD1C321B8E009C9F86 /* FlyingNowLessonDAO.m */; };
-		8212F4371C321B8E009C9F86 /* FlyingNowLessonDAO.m in Sources */ = {isa = PBXBuildFile; fileRef = 8212F3DD1C321B8E009C9F86 /* FlyingNowLessonDAO.m */; };
-		8212F4381C321B8E009C9F86 /* FlyingNowLessonDAO.m in Sources */ = {isa = PBXBuildFile; fileRef = 8212F3DD1C321B8E009C9F86 /* FlyingNowLessonDAO.m */; };
-		8212F4391C321B8E009C9F86 /* FlyingNowLessonData.m in Sources */ = {isa = PBXBuildFile; fileRef = 8212F3DF1C321B8E009C9F86 /* FlyingNowLessonData.m */; };
-		8212F43A1C321B8E009C9F86 /* FlyingNowLessonData.m in Sources */ = {isa = PBXBuildFile; fileRef = 8212F3DF1C321B8E009C9F86 /* FlyingNowLessonData.m */; };
-		8212F43B1C321B8E009C9F86 /* FlyingNowLessonData.m in Sources */ = {isa = PBXBuildFile; fileRef = 8212F3DF1C321B8E009C9F86 /* FlyingNowLessonData.m */; };
-		8212F43C1C321B8E009C9F86 /* FlyingNowLessonData.m in Sources */ = {isa = PBXBuildFile; fileRef = 8212F3DF1C321B8E009C9F86 /* FlyingNowLessonData.m */; };
-		8212F43D1C321B8E009C9F86 /* FlyingNowLessonData.m in Sources */ = {isa = PBXBuildFile; fileRef = 8212F3DF1C321B8E009C9F86 /* FlyingNowLessonData.m */; };
 		8212F43E1C321B8E009C9F86 /* FlyingPubLessonData.m in Sources */ = {isa = PBXBuildFile; fileRef = 8212F3E11C321B8E009C9F86 /* FlyingPubLessonData.m */; };
 		8212F43F1C321B8E009C9F86 /* FlyingPubLessonData.m in Sources */ = {isa = PBXBuildFile; fileRef = 8212F3E11C321B8E009C9F86 /* FlyingPubLessonData.m */; };
 		8212F4401C321B8E009C9F86 /* FlyingPubLessonData.m in Sources */ = {isa = PBXBuildFile; fileRef = 8212F3E11C321B8E009C9F86 /* FlyingPubLessonData.m */; };
@@ -92,16 +82,6 @@
 		8212F4541C321B8E009C9F86 /* FlyingTaskWordData.m in Sources */ = {isa = PBXBuildFile; fileRef = 8212F3E91C321B8E009C9F86 /* FlyingTaskWordData.m */; };
 		8212F4551C321B8E009C9F86 /* FlyingTaskWordData.m in Sources */ = {isa = PBXBuildFile; fileRef = 8212F3E91C321B8E009C9F86 /* FlyingTaskWordData.m */; };
 		8212F4561C321B8E009C9F86 /* FlyingTaskWordData.m in Sources */ = {isa = PBXBuildFile; fileRef = 8212F3E91C321B8E009C9F86 /* FlyingTaskWordData.m */; };
-		8212F4571C321B8E009C9F86 /* FlyingTouchDAO.m in Sources */ = {isa = PBXBuildFile; fileRef = 8212F3EB1C321B8E009C9F86 /* FlyingTouchDAO.m */; };
-		8212F4581C321B8E009C9F86 /* FlyingTouchDAO.m in Sources */ = {isa = PBXBuildFile; fileRef = 8212F3EB1C321B8E009C9F86 /* FlyingTouchDAO.m */; };
-		8212F4591C321B8E009C9F86 /* FlyingTouchDAO.m in Sources */ = {isa = PBXBuildFile; fileRef = 8212F3EB1C321B8E009C9F86 /* FlyingTouchDAO.m */; };
-		8212F45A1C321B8E009C9F86 /* FlyingTouchDAO.m in Sources */ = {isa = PBXBuildFile; fileRef = 8212F3EB1C321B8E009C9F86 /* FlyingTouchDAO.m */; };
-		8212F45B1C321B8E009C9F86 /* FlyingTouchDAO.m in Sources */ = {isa = PBXBuildFile; fileRef = 8212F3EB1C321B8E009C9F86 /* FlyingTouchDAO.m */; };
-		8212F45C1C321B8E009C9F86 /* FlyingTouchRecord.m in Sources */ = {isa = PBXBuildFile; fileRef = 8212F3ED1C321B8E009C9F86 /* FlyingTouchRecord.m */; };
-		8212F45D1C321B8E009C9F86 /* FlyingTouchRecord.m in Sources */ = {isa = PBXBuildFile; fileRef = 8212F3ED1C321B8E009C9F86 /* FlyingTouchRecord.m */; };
-		8212F45E1C321B8E009C9F86 /* FlyingTouchRecord.m in Sources */ = {isa = PBXBuildFile; fileRef = 8212F3ED1C321B8E009C9F86 /* FlyingTouchRecord.m */; };
-		8212F45F1C321B8E009C9F86 /* FlyingTouchRecord.m in Sources */ = {isa = PBXBuildFile; fileRef = 8212F3ED1C321B8E009C9F86 /* FlyingTouchRecord.m */; };
-		8212F4601C321B8E009C9F86 /* FlyingTouchRecord.m in Sources */ = {isa = PBXBuildFile; fileRef = 8212F3ED1C321B8E009C9F86 /* FlyingTouchRecord.m */; };
 		8212F4891C321B8E009C9F86 /* FileHash.m in Sources */ = {isa = PBXBuildFile; fileRef = 8212F4041C321B8E009C9F86 /* FileHash.m */; };
 		8212F48A1C321B8E009C9F86 /* FileHash.m in Sources */ = {isa = PBXBuildFile; fileRef = 8212F4041C321B8E009C9F86 /* FileHash.m */; };
 		8212F48B1C321B8E009C9F86 /* FileHash.m in Sources */ = {isa = PBXBuildFile; fileRef = 8212F4041C321B8E009C9F86 /* FileHash.m */; };
@@ -1379,7 +1359,6 @@
 		C81F8BAE1BD7B488004146F0 /* CoreMedia.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C85F1F9C15FB0EC1004A99CE /* CoreMedia.framework */; };
 		C81F8BAF1BD7B488004146F0 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C81C2BC415F4E2DA00754FE2 /* Foundation.framework */; };
 		C81F8BB01BD7B488004146F0 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C81C2BC615F4E2DA00754FE2 /* CoreGraphics.framework */; };
-		C81F8BC31BD7B488004146F0 /* userModel.db in Resources */ = {isa = PBXBuildFile; fileRef = C85AC33A181CA39D00B83580 /* userModel.db */; };
 		C81F8BD71BD7E47A004146F0 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = C81F8BCC1BD7B552004146F0 /* InfoPlist.strings */; };
 		C81F8BD81BD7E482004146F0 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = C81F8BCE1BD7B552004146F0 /* Images.xcassets */; };
 		C81F8BDA1BD7E4A2004146F0 /* MKStoreKitConfigs.plist in Resources */ = {isa = PBXBuildFile; fileRef = C81F8BD01BD7B552004146F0 /* MKStoreKitConfigs.plist */; };
@@ -1393,7 +1372,6 @@
 		C82D8AAA195D76BC001ACB77 /* libmupdf.a in Frameworks */ = {isa = PBXBuildFile; fileRef = C82D8AA3195D76BC001ACB77 /* libmupdf.a */; };
 		C82D8AAB195D76BC001ACB77 /* libopenjpeg.a in Frameworks */ = {isa = PBXBuildFile; fileRef = C82D8AA4195D76BC001ACB77 /* libopenjpeg.a */; };
 		C82D8AAC195D76BC001ACB77 /* libz.a in Frameworks */ = {isa = PBXBuildFile; fileRef = C82D8AA5195D76BC001ACB77 /* libz.a */; };
-		C85AC375181CA39D00B83580 /* userModel.db in Resources */ = {isa = PBXBuildFile; fileRef = C85AC33A181CA39D00B83580 /* userModel.db */; };
 		C85D91AA18CDB71000A02B21 /* FlyingScanViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C85D91A918CDB71000A02B21 /* FlyingScanViewController.m */; };
 		C85F1F9D15FB0EC1004A99CE /* CoreMedia.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C85F1F9C15FB0EC1004A99CE /* CoreMedia.framework */; };
 		C85F1F9F15FB1C56004A99CE /* MediaPlayer.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C85F1F9E15FB1C56004A99CE /* MediaPlayer.framework */; };
@@ -1554,7 +1532,6 @@
 		FA1BE59D1B27DD5A00AA1AFD /* CoreMedia.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C85F1F9C15FB0EC1004A99CE /* CoreMedia.framework */; };
 		FA1BE59F1B27DD5A00AA1AFD /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C81C2BC415F4E2DA00754FE2 /* Foundation.framework */; };
 		FA1BE5A01B27DD5A00AA1AFD /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C81C2BC615F4E2DA00754FE2 /* CoreGraphics.framework */; };
-		FA1BE5AC1B27DD5A00AA1AFD /* userModel.db in Resources */ = {isa = PBXBuildFile; fileRef = C85AC33A181CA39D00B83580 /* userModel.db */; };
 		FA1BE5D11B27DF3400AA1AFD /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = FA1BE5CA1B27DF3400AA1AFD /* InfoPlist.strings */; };
 		FA1BE5EA1B27E8BF00AA1AFD /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = FA1BE5E91B27E8BF00AA1AFD /* Images.xcassets */; };
 		FA1EEC861ACE908500BBA0FA /* FlyingReviewVC.m in Sources */ = {isa = PBXBuildFile; fileRef = FA1EEC851ACE908500BBA0FA /* FlyingReviewVC.m */; };
@@ -1667,7 +1644,6 @@
 		FA632A7D1B51091400A1222E /* CoreMedia.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C85F1F9C15FB0EC1004A99CE /* CoreMedia.framework */; };
 		FA632A7F1B51091400A1222E /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C81C2BC415F4E2DA00754FE2 /* Foundation.framework */; };
 		FA632A801B51091400A1222E /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C81C2BC615F4E2DA00754FE2 /* CoreGraphics.framework */; };
-		FA632A8C1B51091400A1222E /* userModel.db in Resources */ = {isa = PBXBuildFile; fileRef = C85AC33A181CA39D00B83580 /* userModel.db */; };
 		FA632A9B1B510A0000A1222E /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = FA632A961B510A0000A1222E /* InfoPlist.strings */; };
 		FA632A9C1B510A0000A1222E /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = FA632A981B510A0000A1222E /* Images.xcassets */; };
 		FA7A241B1AB5C89A004AC508 /* FlyingNavigationController.m in Sources */ = {isa = PBXBuildFile; fileRef = FA7A241A1AB5C89A004AC508 /* FlyingNavigationController.m */; };
@@ -1766,7 +1742,6 @@
 		FA8C3EDA1B535A1500DEA02D /* CoreMedia.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C85F1F9C15FB0EC1004A99CE /* CoreMedia.framework */; };
 		FA8C3EDB1B535A1500DEA02D /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C81C2BC415F4E2DA00754FE2 /* Foundation.framework */; };
 		FA8C3EDC1B535A1500DEA02D /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C81C2BC615F4E2DA00754FE2 /* CoreGraphics.framework */; };
-		FA8C3EEC1B535A1500DEA02D /* userModel.db in Resources */ = {isa = PBXBuildFile; fileRef = C85AC33A181CA39D00B83580 /* userModel.db */; };
 		FA8C3EFA1B535B9100DEA02D /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = FA8C3EF51B535B9100DEA02D /* InfoPlist.strings */; };
 		FA8C3EFB1B535B9100DEA02D /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = FA8C3EF71B535B9100DEA02D /* Images.xcassets */; };
 		FA8CDD771B030821004152C2 /* MuAnnotation.m in Sources */ = {isa = PBXBuildFile; fileRef = FA8CDD5F1B030821004152C2 /* MuAnnotation.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
@@ -1809,10 +1784,6 @@
 		8212F3D91C321B8E009C9F86 /* FlyingLessonDAO.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FlyingLessonDAO.m; sourceTree = "<group>"; };
 		8212F3DA1C321B8E009C9F86 /* FlyingLessonData.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FlyingLessonData.h; sourceTree = "<group>"; };
 		8212F3DB1C321B8E009C9F86 /* FlyingLessonData.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FlyingLessonData.m; sourceTree = "<group>"; };
-		8212F3DC1C321B8E009C9F86 /* FlyingNowLessonDAO.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FlyingNowLessonDAO.h; sourceTree = "<group>"; };
-		8212F3DD1C321B8E009C9F86 /* FlyingNowLessonDAO.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FlyingNowLessonDAO.m; sourceTree = "<group>"; };
-		8212F3DE1C321B8E009C9F86 /* FlyingNowLessonData.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FlyingNowLessonData.h; sourceTree = "<group>"; };
-		8212F3DF1C321B8E009C9F86 /* FlyingNowLessonData.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FlyingNowLessonData.m; sourceTree = "<group>"; };
 		8212F3E01C321B8E009C9F86 /* FlyingPubLessonData.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FlyingPubLessonData.h; sourceTree = "<group>"; };
 		8212F3E11C321B8E009C9F86 /* FlyingPubLessonData.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FlyingPubLessonData.m; sourceTree = "<group>"; };
 		8212F3E21C321B8E009C9F86 /* FlyingStatisticDAO.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FlyingStatisticDAO.h; sourceTree = "<group>"; };
@@ -1823,10 +1794,6 @@
 		8212F3E71C321B8E009C9F86 /* FlyingTaskWordDAO.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FlyingTaskWordDAO.m; sourceTree = "<group>"; };
 		8212F3E81C321B8E009C9F86 /* FlyingTaskWordData.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FlyingTaskWordData.h; sourceTree = "<group>"; };
 		8212F3E91C321B8E009C9F86 /* FlyingTaskWordData.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FlyingTaskWordData.m; sourceTree = "<group>"; };
-		8212F3EA1C321B8E009C9F86 /* FlyingTouchDAO.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FlyingTouchDAO.h; sourceTree = "<group>"; };
-		8212F3EB1C321B8E009C9F86 /* FlyingTouchDAO.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FlyingTouchDAO.m; sourceTree = "<group>"; };
-		8212F3EC1C321B8E009C9F86 /* FlyingTouchRecord.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FlyingTouchRecord.h; sourceTree = "<group>"; };
-		8212F3ED1C321B8E009C9F86 /* FlyingTouchRecord.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FlyingTouchRecord.m; sourceTree = "<group>"; };
 		8212F4031C321B8E009C9F86 /* FileHash.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FileHash.h; sourceTree = "<group>"; };
 		8212F4041C321B8E009C9F86 /* FileHash.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FileHash.m; sourceTree = "<group>"; };
 		8212F4051C321B8E009C9F86 /* FlyingDataManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FlyingDataManager.h; sourceTree = "<group>"; };
@@ -2840,10 +2807,6 @@
 				8212F3D91C321B8E009C9F86 /* FlyingLessonDAO.m */,
 				8212F3DA1C321B8E009C9F86 /* FlyingLessonData.h */,
 				8212F3DB1C321B8E009C9F86 /* FlyingLessonData.m */,
-				8212F3DC1C321B8E009C9F86 /* FlyingNowLessonDAO.h */,
-				8212F3DD1C321B8E009C9F86 /* FlyingNowLessonDAO.m */,
-				8212F3DE1C321B8E009C9F86 /* FlyingNowLessonData.h */,
-				8212F3DF1C321B8E009C9F86 /* FlyingNowLessonData.m */,
 				8212F3E01C321B8E009C9F86 /* FlyingPubLessonData.h */,
 				8212F3E11C321B8E009C9F86 /* FlyingPubLessonData.m */,
 				8212F3E21C321B8E009C9F86 /* FlyingStatisticDAO.h */,
@@ -2854,10 +2817,6 @@
 				8212F3E71C321B8E009C9F86 /* FlyingTaskWordDAO.m */,
 				8212F3E81C321B8E009C9F86 /* FlyingTaskWordData.h */,
 				8212F3E91C321B8E009C9F86 /* FlyingTaskWordData.m */,
-				8212F3EA1C321B8E009C9F86 /* FlyingTouchDAO.h */,
-				8212F3EB1C321B8E009C9F86 /* FlyingTouchDAO.m */,
-				8212F3EC1C321B8E009C9F86 /* FlyingTouchRecord.h */,
-				8212F3ED1C321B8E009C9F86 /* FlyingTouchRecord.m */,
 			);
 			path = ActiveRecord;
 			sourceTree = "<group>";
@@ -4322,7 +4281,6 @@
 				824940261C07FB27000A2306 /* FlyingLoadingCell.xib in Resources */,
 				823645AC1C81D4A500499190 /* FlyingGroupTableViewCell.xib in Resources */,
 				8247E66B1CB244850038EF05 /* FlyingStatisitcTableViewCell.xib in Resources */,
-				C85AC375181CA39D00B83580 /* userModel.db in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -4365,7 +4323,6 @@
 				8249408E1C080955000A2306 /* FlyingTagCell.xib in Resources */,
 				823645B01C81D4A600499190 /* FlyingGroupTableViewCell.xib in Resources */,
 				8247E66F1CB244850038EF05 /* FlyingStatisitcTableViewCell.xib in Resources */,
-				C81F8BC31BD7B488004146F0 /* userModel.db in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -4407,7 +4364,6 @@
 				8224F3851CE49C6C00864604 /* injectJSForVideo.js in Resources */,
 				823C2A111CBCB828005CD298 /* FlyingImageLabelCell.xib in Resources */,
 				824940271C07FB27000A2306 /* FlyingLoadingCell.xib in Resources */,
-				FA1BE5AC1B27DD5A00AA1AFD /* userModel.db in Resources */,
 				823C29F71CBCA0C0005CD298 /* FlyingImageTextCell.xib in Resources */,
 				827A71C91CC75B5600E708C7 /* FlyingtAuthorCell.xib in Resources */,
 			);
@@ -4451,7 +4407,6 @@
 				8224F3861CE49C6C00864604 /* injectJSForVideo.js in Resources */,
 				823C2A121CBCB828005CD298 /* FlyingImageLabelCell.xib in Resources */,
 				824940281C07FB27000A2306 /* FlyingLoadingCell.xib in Resources */,
-				FA632A8C1B51091400A1222E /* userModel.db in Resources */,
 				823C29F81CBCA0C0005CD298 /* FlyingImageTextCell.xib in Resources */,
 				827A71CA1CC75B5600E708C7 /* FlyingtAuthorCell.xib in Resources */,
 			);
@@ -4495,7 +4450,6 @@
 				8224F3871CE49C6C00864604 /* injectJSForVideo.js in Resources */,
 				823C2A131CBCB828005CD298 /* FlyingImageLabelCell.xib in Resources */,
 				824940291C07FB27000A2306 /* FlyingLoadingCell.xib in Resources */,
-				FA8C3EEC1B535A1500DEA02D /* userModel.db in Resources */,
 				823C29F91CBCA0C0005CD298 /* FlyingImageTextCell.xib in Resources */,
 				827A71CB1CC75B5600E708C7 /* FlyingtAuthorCell.xib in Resources */,
 			);
@@ -4757,7 +4711,6 @@
 				82A1878D1CCA3BED00DAD77C /* FlyingIndexedCollectionView.m in Sources */,
 				8214E91D1C298BF40014B6BD /* HTTPDynamicFileResponse.m in Sources */,
 				824940471C07FB5D000A2306 /* FlyingContentVC.m in Sources */,
-				8212F45C1C321B8E009C9F86 /* FlyingTouchRecord.m in Sources */,
 				8214EC331C2AE8D20014B6BD /* RCDSettingBaseViewController.m in Sources */,
 				FA11E7B619CD526200D97FDB /* ReaderViewController.m in Sources */,
 				8214E9901C298BF40014B6BD /* FlyingM3U8Parser.m in Sources */,
@@ -4841,7 +4794,6 @@
 				8212F6531C321BC8009C9F86 /* MHWDirectoryWatcher.m in Sources */,
 				8214E97C1C298BF40014B6BD /* DDMultiFormatter.m in Sources */,
 				828BC0D71CA900D2005C30F5 /* FlyingShareInAppActivity.m in Sources */,
-				8212F4391C321B8E009C9F86 /* FlyingNowLessonData.m in Sources */,
 				82493FE41C07F67D000A2306 /* FlyingCoverView.m in Sources */,
 				8214E8E61C298BF40014B6BD /* DDNumber.m in Sources */,
 				82A21D881CAA3B6B00AFAECC /* UIColor+YUVSpace.m in Sources */,
@@ -4867,7 +4819,6 @@
 				8214EB931C2AE8D20014B6BD /* FlyingImagePreivewVC.m in Sources */,
 				8214EC1A1C2AE8D20014B6BD /* RCDDiscussSettingCell.m in Sources */,
 				8214E9771C298BF40014B6BD /* DDDispatchQueueLogFormatter.m in Sources */,
-				8212F4571C321B8E009C9F86 /* FlyingTouchDAO.m in Sources */,
 				FA8CDD771B030821004152C2 /* MuAnnotation.m in Sources */,
 				8214E8F51C298BF40014B6BD /* HTTPConnection.m in Sources */,
 				82AFB9861CFDBA8200108825 /* FlyingGameTextView.m in Sources */,
@@ -4899,7 +4850,6 @@
 				8212F42F1C321B8E009C9F86 /* FlyingLessonData.m in Sources */,
 				8212F44D1C321B8E009C9F86 /* FlyingTaskWordDAO.m in Sources */,
 				8212F68A1C321BC8009C9F86 /* NSString+FlyingExtention.m in Sources */,
-				8212F4341C321B8E009C9F86 /* FlyingNowLessonDAO.m in Sources */,
 				8212F4481C321B8E009C9F86 /* FlyingStatisticData.m in Sources */,
 				8214EBF21C2AE8D20014B6BD /* RealTimeLocationStatusView.m in Sources */,
 				828BC0CB1CA8F4C5005C30F5 /* WeChatMomentsActivity.m in Sources */,
@@ -5034,7 +4984,6 @@
 				8214EBE71C2AE8D20014B6BD /* RCLocationView.m in Sources */,
 				8214E9211C298BF40014B6BD /* HTTPDynamicFileResponse.m in Sources */,
 				82E3B4DE1C943F1B002B2327 /* FlyingWebViewController.m in Sources */,
-				8212F4601C321B8E009C9F86 /* FlyingTouchRecord.m in Sources */,
 				C81F8A7D1BD7B488004146F0 /* ReaderViewController.m in Sources */,
 				8214E9941C298BF40014B6BD /* FlyingM3U8Parser.m in Sources */,
 				8214E8F41C298BF40014B6BD /* HTTPAuthenticationRequest.m in Sources */,
@@ -5122,7 +5071,6 @@
 				8212F6571C321BC8009C9F86 /* MHWDirectoryWatcher.m in Sources */,
 				82A21D8C1CAA3B6B00AFAECC /* UIColor+YUVSpace.m in Sources */,
 				8214ECF91C2D12430014B6BD /* FlyingConversationListVC.m in Sources */,
-				8212F43D1C321B8E009C9F86 /* FlyingNowLessonData.m in Sources */,
 				C81F8AC61BD7B488004146F0 /* MuPageViewReflow.m in Sources */,
 				C81F8AC81BD7B488004146F0 /* FlyingGuideViewController.m in Sources */,
 				8214E9801C298BF40014B6BD /* DDMultiFormatter.m in Sources */,
@@ -5145,7 +5093,6 @@
 				8214E8DB1C298BF40014B6BD /* FlyingDownloader.m in Sources */,
 				8212F6A21C321BC8009C9F86 /* UIDevice+SpeedCategory.m in Sources */,
 				8214E97B1C298BF40014B6BD /* DDDispatchQueueLogFormatter.m in Sources */,
-				8212F45B1C321B8E009C9F86 /* FlyingTouchDAO.m in Sources */,
 				82AFB98A1CFDBA8300108825 /* FlyingGameTextView.m in Sources */,
 				8214E8F91C298BF40014B6BD /* HTTPConnection.m in Sources */,
 				82A187991CCA3E6700DAD77C /* FlyingAuthorCollectionViewCell.m in Sources */,
@@ -5177,7 +5124,6 @@
 				8212F4331C321B8E009C9F86 /* FlyingLessonData.m in Sources */,
 				8212F4511C321B8E009C9F86 /* FlyingTaskWordDAO.m in Sources */,
 				C81F8AFE1BD7B488004146F0 /* CGPDFDocument.m in Sources */,
-				8212F4381C321B8E009C9F86 /* FlyingNowLessonDAO.m in Sources */,
 				828BC0CF1CA8F4C5005C30F5 /* WeChatMomentsActivity.m in Sources */,
 				8212F68E1C321BC8009C9F86 /* NSString+FlyingExtention.m in Sources */,
 				8236458D1C81A5E500499190 /* KMNetworkLoadingViewController.m in Sources */,
@@ -5308,7 +5254,6 @@
 				82A1878E1CCA3BED00DAD77C /* FlyingIndexedCollectionView.m in Sources */,
 				8212F4991C321B8E009C9F86 /* MKStoreKit.m in Sources */,
 				82E3B4DC1C943F19002B2327 /* FlyingWebViewController.m in Sources */,
-				8212F4581C321B8E009C9F86 /* FlyingTouchDAO.m in Sources */,
 				8212F4301C321B8E009C9F86 /* FlyingLessonData.m in Sources */,
 				8214E9A51C2995460014B6BD /* FlyingHttpTool.m in Sources */,
 				FA1BE4A21B27DD5A00AA1AFD /* ReaderViewController.m in Sources */,
@@ -5416,7 +5361,6 @@
 				824940221C07FB27000A2306 /* FlyingLoadingCell.m in Sources */,
 				8212F5821C321BC8009C9F86 /* RSKImageCropViewController.m in Sources */,
 				8214EBEE1C2AE8D20014B6BD /* RealTimeLocationStartCell.m in Sources */,
-				8212F4351C321B8E009C9F86 /* FlyingNowLessonDAO.m in Sources */,
 				8212F69F1C321BC8009C9F86 /* UIDevice+SpeedCategory.m in Sources */,
 				8249403E1C07FB5D000A2306 /* FlyingContentTitleAndTypeCell.m in Sources */,
 				FA1BE4EE1B27DD5A00AA1AFD /* ReaderThumbRequest.m in Sources */,
@@ -5491,7 +5435,6 @@
 				8212F4211C321B8E009C9F86 /* FlyingItemDao.m in Sources */,
 				82053BD91CDACA68000A5794 /* FlyingMemberIconCellCollectionViewCell.m in Sources */,
 				8214E8F61C298BF40014B6BD /* HTTPConnection.m in Sources */,
-				8212F45D1C321B8E009C9F86 /* FlyingTouchRecord.m in Sources */,
 				8212F42B1C321B8E009C9F86 /* FlyingLessonDAO.m in Sources */,
 				824940341C07FB5D000A2306 /* FlyingContentSummaryCell.m in Sources */,
 				827AD7F91CBDF7CC00C5309D /* FlyingTabBarController.m in Sources */,
@@ -5524,7 +5467,6 @@
 				8212F5D21C321BC8009C9F86 /* FlyingLoadingView.m in Sources */,
 				8214EB941C2AE8D20014B6BD /* FlyingImagePreivewVC.m in Sources */,
 				8214EBD01C2AE8D20014B6BD /* HeadCollectionView.m in Sources */,
-				8212F43A1C321B8E009C9F86 /* FlyingNowLessonData.m in Sources */,
 				828BC0D11CA8F4C5005C30F5 /* WeChatSessionActivity.m in Sources */,
 				FA1BE54D1B27DD5A00AA1AFD /* FlyingNavigationController.m in Sources */,
 				8214EC741C2AEC200014B6BD /* RCDUpdateNameViewController.m in Sources */,
@@ -5584,7 +5526,6 @@
 				823645C01C81D77A00499190 /* FlyingGroupUpdateCell.m in Sources */,
 				8212F5B51C321BC8009C9F86 /* SZTextView.m in Sources */,
 				8212F49A1C321B8E009C9F86 /* MKStoreKit.m in Sources */,
-				8212F4591C321B8E009C9F86 /* FlyingTouchDAO.m in Sources */,
 				8212F4311C321B8E009C9F86 /* FlyingLessonData.m in Sources */,
 				8214E9A61C2995460014B6BD /* FlyingHttpTool.m in Sources */,
 				FA6329861B51091400A1222E /* ReaderViewController.m in Sources */,
@@ -5692,7 +5633,6 @@
 				824940231C07FB27000A2306 /* FlyingLoadingCell.m in Sources */,
 				8212F5831C321BC8009C9F86 /* RSKImageCropViewController.m in Sources */,
 				8214EBEF1C2AE8D20014B6BD /* RealTimeLocationStartCell.m in Sources */,
-				8212F4361C321B8E009C9F86 /* FlyingNowLessonDAO.m in Sources */,
 				8212F6A01C321BC8009C9F86 /* UIDevice+SpeedCategory.m in Sources */,
 				8249403F1C07FB5D000A2306 /* FlyingContentTitleAndTypeCell.m in Sources */,
 				FA6329D21B51091400A1222E /* ReaderThumbRequest.m in Sources */,
@@ -5767,7 +5707,6 @@
 				8212F4221C321B8E009C9F86 /* FlyingItemDao.m in Sources */,
 				82053BDA1CDACA68000A5794 /* FlyingMemberIconCellCollectionViewCell.m in Sources */,
 				8214E8F71C298BF40014B6BD /* HTTPConnection.m in Sources */,
-				8212F45E1C321B8E009C9F86 /* FlyingTouchRecord.m in Sources */,
 				8212F42C1C321B8E009C9F86 /* FlyingLessonDAO.m in Sources */,
 				827AD7FA1CBDF7CD00C5309D /* FlyingTabBarController.m in Sources */,
 				824940351C07FB5D000A2306 /* FlyingContentSummaryCell.m in Sources */,
@@ -5800,7 +5739,6 @@
 				8212F5D31C321BC8009C9F86 /* FlyingLoadingView.m in Sources */,
 				8214EB951C2AE8D20014B6BD /* FlyingImagePreivewVC.m in Sources */,
 				8214EBD11C2AE8D20014B6BD /* HeadCollectionView.m in Sources */,
-				8212F43B1C321B8E009C9F86 /* FlyingNowLessonData.m in Sources */,
 				828BC0D21CA8F4C5005C30F5 /* WeChatSessionActivity.m in Sources */,
 				FA632A2D1B51091400A1222E /* FlyingNavigationController.m in Sources */,
 				8214EC751C2AEC200014B6BD /* RCDUpdateNameViewController.m in Sources */,
@@ -5860,7 +5798,6 @@
 				82A187901CCA3BED00DAD77C /* FlyingIndexedCollectionView.m in Sources */,
 				8212F49B1C321B8E009C9F86 /* MKStoreKit.m in Sources */,
 				82E3B4DD1C943F1A002B2327 /* FlyingWebViewController.m in Sources */,
-				8212F45A1C321B8E009C9F86 /* FlyingTouchDAO.m in Sources */,
 				8212F4321C321B8E009C9F86 /* FlyingLessonData.m in Sources */,
 				8214E9A71C2995460014B6BD /* FlyingHttpTool.m in Sources */,
 				FA8C3DE21B535A1500DEA02D /* ReaderViewController.m in Sources */,
@@ -5970,7 +5907,6 @@
 				8214EBF01C2AE8D20014B6BD /* RealTimeLocationStartCell.m in Sources */,
 				824940241C07FB27000A2306 /* FlyingLoadingCell.m in Sources */,
 				8212F6A11C321BC8009C9F86 /* UIDevice+SpeedCategory.m in Sources */,
-				8212F4371C321B8E009C9F86 /* FlyingNowLessonDAO.m in Sources */,
 				824940401C07FB5D000A2306 /* FlyingContentTitleAndTypeCell.m in Sources */,
 				82AFB9891CFDBA8200108825 /* FlyingGameTextView.m in Sources */,
 				8214EC0E1C2AE8D20014B6BD /* RCDConversationSettingTableViewHeader.m in Sources */,
@@ -6043,7 +5979,6 @@
 				8212F4231C321B8E009C9F86 /* FlyingItemDao.m in Sources */,
 				82053BDB1CDACA68000A5794 /* FlyingMemberIconCellCollectionViewCell.m in Sources */,
 				8214E8F81C298BF40014B6BD /* HTTPConnection.m in Sources */,
-				8212F45F1C321B8E009C9F86 /* FlyingTouchRecord.m in Sources */,
 				8212F42D1C321B8E009C9F86 /* FlyingLessonDAO.m in Sources */,
 				824940361C07FB5D000A2306 /* FlyingContentSummaryCell.m in Sources */,
 				827AD7FB1CBDF7CD00C5309D /* FlyingTabBarController.m in Sources */,
@@ -6076,7 +6011,6 @@
 				8212F5D41C321BC8009C9F86 /* FlyingLoadingView.m in Sources */,
 				8214EB961C2AE8D20014B6BD /* FlyingImagePreivewVC.m in Sources */,
 				8214EBD21C2AE8D20014B6BD /* HeadCollectionView.m in Sources */,
-				8212F43C1C321B8E009C9F86 /* FlyingNowLessonData.m in Sources */,
 				828BC0D31CA8F4C5005C30F5 /* WeChatSessionActivity.m in Sources */,
 				FA8C3E891B535A1500DEA02D /* FlyingNavigationController.m in Sources */,
 				8214EC761C2AEC200014B6BD /* RCDUpdateNameViewController.m in Sources */,

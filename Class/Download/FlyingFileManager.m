@@ -192,50 +192,16 @@
     return [FlyingFileManager shareInstance].myRongcloudDir;
 }
 
-//////////////////////////////////////////////////////////////
-#pragma mark -监控分享的本地文件夹
-//////////////////////////////////////////////////////////////
-- (void) watchDocumentStateNow
-{
-    //开启文件夹监控
-    [FlyingDBManager updataDBForLocal];
-    
-    if (!_docWatcher) {
-        
-        NSString *documentDirectory = [NSHomeDirectory() stringByAppendingPathComponent:@"Documents"];
-        
-        _docWatcher = [MHWDirectoryWatcher directoryWatcherAtPath:documentDirectory callback:^{
-            
-            NSLog(@"watchDocumentStateNow");
-            
-            if (!_source) {
-                
-                _source = dispatch_source_create(DISPATCH_SOURCE_TYPE_DATA_ADD, 0, 0, dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0));
-                dispatch_source_set_event_handler(_source, ^{
-                    
-                    [FlyingDBManager updataDBForLocal];
-                    [[NSNotificationCenter defaultCenter] postNotificationName:KDocumentStateChange object:nil];
-                });
-                dispatch_resume(_source);
-            }
-            
-            dispatch_source_merge_data(_source, 1);
-        }];
-        
-        [_docWatcher startWatching];
-    }
-}
-
 +(void)setNotBackUp
 {
-    NSString *documentDirectory = [NSHomeDirectory() stringByAppendingPathComponent:@"Documents"];
-    
-    NSURL *url = [NSURL fileURLWithPath:documentDirectory];
-    
-    [FlyingFileManager addSkipBackupAttributeToItemAtURL:url];
+//    NSString *documentDirectory = [NSHomeDirectory() stringByAppendingPathComponent:@"Documents"];
+//    
+//    NSURL *url = [NSURL fileURLWithPath:documentDirectory];
+//    
+//    [FlyingFileManager addSkipBackupAttributeToItemAtURL:url];
     
     NSString *myDataDir = [FlyingFileManager getMyLocalDataDir];
-    url = [NSURL fileURLWithPath:myDataDir];
+    NSURL *url = [NSURL fileURLWithPath:myDataDir];
     
     [FlyingFileManager addSkipBackupAttributeToItemAtURL:url];
 }

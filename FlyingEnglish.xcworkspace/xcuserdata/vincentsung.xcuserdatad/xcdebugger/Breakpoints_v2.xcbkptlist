@@ -10,11 +10,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "Class/Group/FlyingGroupTableViewCell.m"
-            timestampString = "485958027.26977"
+            timestampString = "487161945.231813"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "138"
-            endingLineNumber = "138"
+            startingLineNumber = "141"
+            endingLineNumber = "141"
             landmarkName = "-collectionView:cellForItemAtIndexPath:"
             landmarkType = "5">
          </BreakpointContent>
@@ -26,11 +26,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "Class/Group/FlyingGroupTableViewCell.m"
-            timestampString = "485958027.26977"
+            timestampString = "487161945.231813"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "192"
-            endingLineNumber = "192"
+            startingLineNumber = "195"
+            endingLineNumber = "195"
             landmarkName = "-loadMemberList"
             landmarkType = "5">
          </BreakpointContent>
@@ -42,11 +42,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "Class/Group/FlyingGroupTableViewCell.m"
-            timestampString = "485958027.26977"
+            timestampString = "487161945.231813"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "133"
-            endingLineNumber = "133"
+            startingLineNumber = "136"
+            endingLineNumber = "136"
             landmarkName = "-collectionView:numberOfItemsInSection:"
             landmarkType = "5">
          </BreakpointContent>
@@ -127,11 +127,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "Class/Group/FlyingGroupTableViewCell.m"
-            timestampString = "485958027.26977"
+            timestampString = "487161945.231813"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "73"
-            endingLineNumber = "73"
+            startingLineNumber = "75"
+            endingLineNumber = "75"
             landmarkName = "-settingWithGroupData:"
             landmarkType = "5">
          </BreakpointContent>
@@ -367,11 +367,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "Class/Content/FlyingContentVC.m"
-            timestampString = "487070734.429604"
+            timestampString = "487091353.485068"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "1196"
-            endingLineNumber = "1196"
+            startingLineNumber = "1204"
+            endingLineNumber = "1204"
             landmarkName = "-askHelpNow"
             landmarkType = "5">
          </BreakpointContent>
@@ -623,11 +623,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "Class/HTTP/FlyingHttpTool.m"
-            timestampString = "485685453.256459"
+            timestampString = "487161945.231813"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "1825"
-            endingLineNumber = "1825"
+            startingLineNumber = "1712"
+            endingLineNumber = "1712"
             landmarkName = "+getTagListForDomainID:DomainType:TagString:Count:Completion:"
             landmarkType = "5">
          </BreakpointContent>
@@ -750,11 +750,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "Supporting Files/iFlyingAppDelegate.m"
-            timestampString = "487070734.429604"
+            timestampString = "487080012.725059"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "346"
-            endingLineNumber = "346"
+            startingLineNumber = "342"
+            endingLineNumber = "342"
             landmarkName = "-onRCIMConnectionStatusChanged:"
             landmarkType = "5">
          </BreakpointContent>
@@ -782,11 +782,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "Class/Group/FlyingGroupTableViewCell.m"
-            timestampString = "485958027.26977"
+            timestampString = "487161945.231813"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "155"
-            endingLineNumber = "155"
+            startingLineNumber = "158"
+            endingLineNumber = "158"
             landmarkName = "-collectionView:didSelectItemAtIndexPath:"
             landmarkType = "5">
          </BreakpointContent>
@@ -814,11 +814,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "Class/Content/FlyingWebViewController.m"
-            timestampString = "487070734.429604"
+            timestampString = "487091543.224197"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "305"
-            endingLineNumber = "305"
+            startingLineNumber = "316"
+            endingLineNumber = "316"
             landmarkName = "-webView:didStartProvisionalNavigation:"
             landmarkType = "5">
          </BreakpointContent>
@@ -830,11 +830,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "Class/Content/FlyingWebViewController.m"
-            timestampString = "487070734.429604"
+            timestampString = "487091543.224197"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "283"
-            endingLineNumber = "283"
+            startingLineNumber = "294"
+            endingLineNumber = "294"
             landmarkName = "-webView:didFinishNavigation:"
             landmarkType = "5">
          </BreakpointContent>
@@ -958,11 +958,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "Class/Content/FlyingWebViewController.m"
-            timestampString = "487070734.429604"
+            timestampString = "487091543.224197"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "398"
-            endingLineNumber = "398"
+            startingLineNumber = "409"
+            endingLineNumber = "409"
             landmarkName = "-userContentController:didReceiveScriptMessage:"
             landmarkType = "5">
          </BreakpointContent>
@@ -974,11 +974,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "Class/Content/FlyingWebViewController.m"
-            timestampString = "487070734.429604"
+            timestampString = "487091543.224197"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "461"
-            endingLineNumber = "461"
+            startingLineNumber = "472"
+            endingLineNumber = "472"
             landmarkName = "-webView:runJavaScriptConfirmPanelWithMessage:initiatedByFrame:completionHandler:"
             landmarkType = "5">
          </BreakpointContent>
@@ -990,11 +990,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "Class/Content/FlyingWebViewController.m"
-            timestampString = "487070734.429604"
+            timestampString = "487091543.224197"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "402"
-            endingLineNumber = "402"
+            startingLineNumber = "413"
+            endingLineNumber = "413"
             landmarkName = "-userContentController:didReceiveScriptMessage:"
             landmarkType = "5">
          </BreakpointContent>
@@ -1038,11 +1038,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "Class/Content/FlyingContentVC.m"
-            timestampString = "487070734.429604"
+            timestampString = "487091353.485068"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "1272"
-            endingLineNumber = "1272"
+            startingLineNumber = "1280"
+            endingLineNumber = "1280"
             landmarkName = "@implementation FlyingContentVC"
             landmarkType = "3">
          </BreakpointContent>
@@ -1054,11 +1054,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "Class/Content/FlyingContentVC.m"
-            timestampString = "487070734.429604"
+            timestampString = "487091353.485068"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "1086"
-            endingLineNumber = "1086"
+            startingLineNumber = "1094"
+            endingLineNumber = "1094"
             landmarkName = "-tableView:didSelectRowAtIndexPath:"
             landmarkType = "5">
          </BreakpointContent>
@@ -1070,11 +1070,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "Class/Content/FlyingContentVC.m"
-            timestampString = "487070734.429604"
+            timestampString = "487091353.485068"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "1117"
-            endingLineNumber = "1117"
+            startingLineNumber = "1125"
+            endingLineNumber = "1125"
             landmarkName = "-didTouchAccess"
             landmarkType = "5">
          </BreakpointContent>
@@ -1086,11 +1086,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "Class/Content/FlyingContentVC.m"
-            timestampString = "487070734.429604"
+            timestampString = "487091353.485068"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "1264"
-            endingLineNumber = "1264"
+            startingLineNumber = "1272"
+            endingLineNumber = "1272"
             landmarkName = "@implementation FlyingContentVC"
             landmarkType = "3">
          </BreakpointContent>
@@ -1102,11 +1102,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "Class/Content/FlyingContentVC.m"
-            timestampString = "487070734.429604"
+            timestampString = "487091353.485068"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "1273"
-            endingLineNumber = "1273"
+            startingLineNumber = "1281"
+            endingLineNumber = "1281"
             landmarkName = "@implementation FlyingContentVC"
             landmarkType = "3">
          </BreakpointContent>
@@ -1230,11 +1230,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "Class/HTTP/FlyingHttpTool.m"
-            timestampString = "485685453.256459"
+            timestampString = "487161945.231813"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "653"
-            endingLineNumber = "653"
+            startingLineNumber = "651"
+            endingLineNumber = "651"
             landmarkName = "+checkGroupMemberInfoForAccount:GroupID:Completion:"
             landmarkType = "5">
          </BreakpointContent>
@@ -1246,11 +1246,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "Supporting Files/iFlyingAppDelegate.m"
-            timestampString = "487070734.429604"
+            timestampString = "487080012.725059"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "318"
-            endingLineNumber = "318"
+            startingLineNumber = "314"
+            endingLineNumber = "314"
             landmarkName = "-preparelocalEnvironment"
             landmarkType = "5">
          </BreakpointContent>
@@ -1262,11 +1262,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "Supporting Files/iFlyingAppDelegate.m"
-            timestampString = "487070734.429604"
+            timestampString = "487080012.725059"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "321"
-            endingLineNumber = "321"
+            startingLineNumber = "317"
+            endingLineNumber = "317"
             landmarkName = "-preparelocalEnvironment"
             landmarkType = "5">
          </BreakpointContent>
@@ -1278,11 +1278,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "Class/Content/FlyingContentVC.m"
-            timestampString = "487070734.429604"
+            timestampString = "487091353.485068"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "1194"
-            endingLineNumber = "1194"
+            startingLineNumber = "1202"
+            endingLineNumber = "1202"
             landmarkName = "-askHelpNow"
             landmarkType = "5">
          </BreakpointContent>
@@ -1294,11 +1294,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "Class/Content/FlyingContentVC.m"
-            timestampString = "487070734.429604"
+            timestampString = "487091353.485068"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "1235"
-            endingLineNumber = "1235"
+            startingLineNumber = "1243"
+            endingLineNumber = "1243"
             landmarkName = "-contactWithAuhor"
             landmarkType = "5">
          </BreakpointContent>
@@ -1310,11 +1310,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "Class/Content/FlyingContentVC.m"
-            timestampString = "487070734.429604"
+            timestampString = "487091353.485068"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "1222"
-            endingLineNumber = "1222"
+            startingLineNumber = "1230"
+            endingLineNumber = "1230"
             landmarkName = "-contactWithAuhor"
             landmarkType = "5">
          </BreakpointContent>
@@ -1326,11 +1326,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "Class/DataManager/FlyingDataManager.m"
-            timestampString = "486037941.272639"
+            timestampString = "487080012.725059"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "90"
-            endingLineNumber = "90"
+            startingLineNumber = "88"
+            endingLineNumber = "88"
             landmarkName = "+getAppData"
             landmarkType = "5">
          </BreakpointContent>
@@ -1390,11 +1390,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "Class/Media/FlyingMediaVC.m"
-            timestampString = "487070734.429604"
+            timestampString = "487132814.928772"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "1767"
-            endingLineNumber = "1767"
+            startingLineNumber = "1763"
+            endingLineNumber = "1763"
             landmarkName = "-showViewForWord:"
             landmarkType = "5">
          </BreakpointContent>
@@ -1598,11 +1598,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "Class/Content/FlyingContentVC.m"
-            timestampString = "487070734.429604"
+            timestampString = "487091353.485068"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "672"
-            endingLineNumber = "672"
+            startingLineNumber = "680"
+            endingLineNumber = "680"
             landmarkName = "-updateDownloadOk:"
             landmarkType = "5">
          </BreakpointContent>
@@ -1662,11 +1662,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "Class/Document/PDFReader/ReaderViewController.m"
-            timestampString = "487070734.429604"
+            timestampString = "487080012.725059"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "897"
-            endingLineNumber = "897"
+            startingLineNumber = "890"
+            endingLineNumber = "890"
             landmarkName = "-handleDoubleTap:"
             landmarkType = "5">
          </BreakpointContent>
@@ -1726,11 +1726,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "Class/Content/FlyingWebViewController.m"
-            timestampString = "487070734.429604"
+            timestampString = "487091543.224197"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "242"
-            endingLineNumber = "242"
+            startingLineNumber = "253"
+            endingLineNumber = "253"
             landmarkName = "-loadWebview"
             landmarkType = "5">
          </BreakpointContent>
@@ -1790,11 +1790,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "Class/Content/FlyingWebViewController.m"
-            timestampString = "487070734.429604"
+            timestampString = "487091543.224197"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "522"
-            endingLineNumber = "522"
+            startingLineNumber = "533"
+            endingLineNumber = "533"
             landmarkName = "-layoutButtonsForCurrentSizeClass"
             landmarkType = "5">
          </BreakpointContent>
@@ -1822,11 +1822,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "Class/Content/FlyingWebViewController.m"
-            timestampString = "487070734.429604"
+            timestampString = "487091543.224197"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "477"
-            endingLineNumber = "477"
+            startingLineNumber = "488"
+            endingLineNumber = "488"
             landmarkName = "-setUpNavigationButtons"
             landmarkType = "5">
          </BreakpointContent>
@@ -1942,11 +1942,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "Class/Content/FlyingWebViewController.m"
-            timestampString = "487070734.429604"
+            timestampString = "487091543.224197"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "630"
-            endingLineNumber = "630"
+            startingLineNumber = "641"
+            endingLineNumber = "641"
             landmarkName = "-actionButtonTapped:"
             landmarkType = "5">
          </BreakpointContent>
@@ -1958,11 +1958,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "Class/Content/FlyingWebViewController.m"
-            timestampString = "487070734.429604"
+            timestampString = "487091543.224197"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "216"
-            endingLineNumber = "216"
+            startingLineNumber = "217"
+            endingLineNumber = "217"
             landmarkName = "-doSomething"
             landmarkType = "5">
          </BreakpointContent>
@@ -2038,11 +2038,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "Class/Account/FlyingAccountVC.m"
-            timestampString = "487070734.429604"
+            timestampString = "487080012.725059"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "133"
-            endingLineNumber = "133"
+            startingLineNumber = "131"
+            endingLineNumber = "131"
             landmarkName = "-viewWillAppear:"
             landmarkType = "5">
          </BreakpointContent>
@@ -2134,11 +2134,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "Supporting Files/iFlyingAppDelegate.m"
-            timestampString = "487070734.429604"
+            timestampString = "487080012.725059"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "309"
-            endingLineNumber = "309"
+            startingLineNumber = "305"
+            endingLineNumber = "305"
             landmarkName = "-preparelocalEnvironment"
             landmarkType = "5">
          </BreakpointContent>
@@ -2182,11 +2182,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "Class/HTTP/FlyingHttpTool.m"
-            timestampString = "485685453.256459"
+            timestampString = "487161945.231813"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "1934"
-            endingLineNumber = "1934"
+            startingLineNumber = "1821"
+            endingLineNumber = "1821"
             landmarkName = "+getAppDataforBounldeID:Completion:"
             landmarkType = "5">
          </BreakpointContent>
@@ -2422,11 +2422,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "Supporting Files/iFlyingAppDelegate.m"
-            timestampString = "487070734.429604"
+            timestampString = "487080012.725059"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "140"
-            endingLineNumber = "140"
+            startingLineNumber = "136"
+            endingLineNumber = "136"
             landmarkName = "-application:willFinishLaunchingWithOptions:"
             landmarkType = "5">
          </BreakpointContent>
@@ -2438,11 +2438,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "Supporting Files/iFlyingAppDelegate.m"
-            timestampString = "487070734.429604"
+            timestampString = "487080012.725059"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "675"
-            endingLineNumber = "675"
+            startingLineNumber = "665"
+            endingLineNumber = "665"
             landmarkName = "-getTabBarController"
             landmarkType = "5">
          </BreakpointContent>
@@ -2454,11 +2454,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "Class/Account/FlyingAccountVC.m"
-            timestampString = "487070734.429604"
+            timestampString = "487080012.725059"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "82"
-            endingLineNumber = "82"
+            startingLineNumber = "80"
+            endingLineNumber = "80"
             landmarkName = "-viewDidLoad"
             landmarkType = "5">
          </BreakpointContent>
@@ -2486,11 +2486,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "Class/HTTP/FlyingHttpTool.m"
-            timestampString = "485837485.336946"
+            timestampString = "487080012.725059"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "89"
-            endingLineNumber = "89"
+            startingLineNumber = "86"
+            endingLineNumber = "86"
             landmarkName = "+connectWithRongCloud:"
             landmarkType = "5">
          </BreakpointContent>
@@ -2518,11 +2518,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "Supporting Files/iFlyingAppDelegate.m"
-            timestampString = "487070734.429604"
+            timestampString = "487080012.725059"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "469"
-            endingLineNumber = "469"
+            startingLineNumber = "465"
+            endingLineNumber = "465"
             landmarkName = "-applicationDidEnterBackground:"
             landmarkType = "5">
          </BreakpointContent>
@@ -2534,11 +2534,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "Supporting Files/iFlyingAppDelegate.m"
-            timestampString = "487070734.429604"
+            timestampString = "487080012.725059"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "544"
-            endingLineNumber = "544"
+            startingLineNumber = "534"
+            endingLineNumber = "534"
             landmarkName = "-applicationWillTerminate:"
             landmarkType = "5">
          </BreakpointContent>
@@ -2550,11 +2550,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "Supporting Files/iFlyingAppDelegate.m"
-            timestampString = "487070734.429604"
+            timestampString = "487080012.725059"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "518"
-            endingLineNumber = "518"
+            startingLineNumber = "508"
+            endingLineNumber = "508"
             landmarkName = "-applicationDidReceiveMemoryWarning:"
             landmarkType = "5">
          </BreakpointContent>
@@ -2624,11 +2624,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "Class/Group/FlyingGroupTableViewCell.m"
-            timestampString = "485958027.26977"
+            timestampString = "487161945.231813"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "196"
-            endingLineNumber = "196"
+            startingLineNumber = "199"
+            endingLineNumber = "199"
             landmarkName = "-loadMemberList"
             landmarkType = "5">
          </BreakpointContent>
@@ -2768,11 +2768,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "Class/DataManager/ActiveRecord/FlyingTaskWordDAO.m"
-            timestampString = "486661542.781909"
+            timestampString = "487080012.725059"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "66"
-            endingLineNumber = "66"
+            startingLineNumber = "67"
+            endingLineNumber = "67"
             landmarkName = "-selectWordsWithUserID:"
             landmarkType = "5">
             <Locations>
@@ -2838,6 +2838,22 @@
             startingLineNumber = "159"
             endingLineNumber = "159"
             landmarkName = "-viewDidAppear:"
+            landmarkType = "5">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "Class/Content/FlyingContentVC.m"
+            timestampString = "487091422.230859"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "292"
+            endingLineNumber = "292"
+            landmarkName = "-doShare"
             landmarkType = "5">
          </BreakpointContent>
       </BreakpointProxy>

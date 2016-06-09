@@ -14,9 +14,6 @@
 
 + (FlyingDBManager*)shareInstance;
 
-//根据本地文件情况更新数据库（离线下载本地问题，以后可以加上缓存文件相关的处理）
-+ (void) updataDBForLocal;
-
 //初始化
 +(void) prepareDB;
 

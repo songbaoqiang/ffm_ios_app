@@ -13,9 +13,6 @@
 #import "FlyingLessonData.h"
 #import "FlyingLessonDAO.h"
 
-#import "FlyingNowLessonData.h"
-#import "FlyingNowLessonDAO.h"
-
 #import "UICKeyChainStore.h"
 
 #import "iFlyingAppDelegate.h"
@@ -37,8 +34,6 @@
 #import "FlyingLessonParser.h"
 #import "ReaderViewController.h"
 
-#import "FlyingTouchDAO.h"
-#import "FlyingTouchRecord.h"
 #import "FlyingStatisticDAO.h"
 #import "FlyingContentListVC.h"
 
@@ -76,7 +71,6 @@
 #import "FMDatabase.h"
 #import "FMDatabaseAdditions.h"
 #import "FlyingStatisticDAO.h"
-#import "FlyingTouchDAO.h"
 #import "UIView+Autosizing.h"
 #import "UIImage+localFile.h"
 #import "FlyingM3U8Downloader.h"
@@ -137,8 +131,6 @@ static void *TrackObservationContext         = &TrackObservationContext;
     
     NSInteger                 _balanceCoin;
     NSInteger                 _touchWordCount;
-    
-    FlyingTouchDAO           *_touchDAO;
     
     NSString                 * _movieURLStr;
     BE_Vedio_Type              _contentType;
@@ -250,6 +242,15 @@ static void *TrackObservationContext         = &TrackObservationContext;
     [super viewWillDisappear:animated];
 }
 
+-(void) viewDidDisappear:(BOOL)animated
+{
+    if ([[NSFileManager defaultManager] fileExistsAtPath:_lessonData.localURLOfSub]) {
+        [[NSFileManager defaultManager] removeItemAtPath:_lessonData.localURLOfSub error:nil];
+    }
+    
+    [super viewDidDisappear:animated];
+}
+
 - (void)didReceiveMemoryWarning
 {
     [super didReceiveMemoryWarning];
@@ -339,8 +340,6 @@ static void *TrackObservationContext         = &TrackObservationContext;
     //收费相关
     FlyingStatisticDAO *statisticDAO = [[FlyingStatisticDAO alloc] init];
     [statisticDAO initDataForUserID:_currentPassport];
-    _touchDAO     = [[FlyingTouchDAO alloc] init];
-    [_touchDAO initDataForUserID:_currentPassport LessonID:self.thePubLesson.lessonID];
     
     _touchWordCount = [statisticDAO touchCountWithUserID:_currentPassport];
     _balanceCoin  = [statisticDAO finalMoneyWithUserID:_currentPassport];
@@ -1246,9 +1245,6 @@ static void *TrackObservationContext         = &TrackObservationContext;
         [self.player pause];
         [self afterStopplaying];
     }
-    
-    //删除数据库本地纪录，资源自动释放
-    [[[FlyingNowLessonDAO alloc] init] deleteWithUserID:_currentPassport LessonID:self.thePubLesson.lessonID];
 }
 
 -(BOOL) isPlayingNow
@@ -1891,13 +1887,7 @@ static void *TrackObservationContext         = &TrackObservationContext;
     if (_theOnlyTagWord) {
         
         [self showViewForWord:_theOnlyTagWord];
-        
-        dispatch_async(dispatch_get_main_queue(), ^{
-            
-            //更新点击次数和单词纪录
-            [_touchDAO countPlusWithUserID:_currentPassport LessonID:self.thePubLesson.lessonID];
-        });
-        
+                
         //纪录重点单词
         [self addToucLammaRecord:_theOnlyTagWord Sentence:self.subtitleTextView.text];
     }

@@ -288,11 +288,19 @@
 
 -(void)doShare
 {
-    if (self.thePubLesson.shareURL)
+    
+    NSString * shareURL = self.thePubLesson.shareURL;
+    
+    if ([NSString isBlankString:shareURL])
+    {
+        shareURL = self.thePubLesson.contentURL;
+    }
+    
+    if (![NSString isBlankString:shareURL])
     {
         FlyingShareData * shareData = [[FlyingShareData alloc] init];
         
-        shareData.shareWebURL  = [NSURL URLWithString:self.thePubLesson.shareURL];
+        shareData.shareWebURL  = [NSURL URLWithString:shareURL];
         shareData.title   = self.thePubLesson.title;
         shareData.digest  = self.thePubLesson.desc;
         

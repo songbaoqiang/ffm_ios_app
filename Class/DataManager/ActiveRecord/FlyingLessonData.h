@@ -19,10 +19,12 @@
 @property (nonatomic, strong) NSString *BEDESC;           //课程描述
 @property (nonatomic, strong) NSString *BEIMAGEURL;       //课程截图
 @property (nonatomic, strong) NSString *BECONTENTURL;     //内容连接
+
 @property (nonatomic, strong) NSString *BESUBURL;         //课程字幕
 @property (nonatomic, strong) NSString *BEPROURL;         //字典地址
+
 @property (nonatomic, strong) NSString *BEWEBURL;         //课程首页
-@property (nonatomic, strong) NSString *BESHAREURL;       //课程分布
+@property (nonatomic, strong) NSString *BESHAREURL;       //分享地址
 
 @property (nonatomic, assign) double    BEDURATION;       //课程时长
 
@@ -50,7 +52,7 @@
             ContentURL:  (NSString *) contentURL
            SubtitleURL:  (NSString *) subtitleURL
       PronunciationURL:  (NSString *) pronunciationURL
-                 Level:  (NSString *) level
+              ShareURL:  (NSString *) shareURL
               Duration:  (double)     duration
        DownloadPercent:  (double)     downloadPercent
           DownloadSate:  (BOOL)       downloadState
@@ -65,15 +67,5 @@
 
 
 - (id)initWithPubData:(FlyingPubLessonData *)pubLessonData;
-
-//从本地内容初始化，从网络补充内容
-- (id)initWithLessonID:  (NSString *) lessonID
-            LocalTitle:  (NSString *) localTitle
-       LocalContentURL:  (NSString *) localContentURL
-           LocalSubURL:  (NSString *) localSubURL
-         LocalCoverURL:  (NSString *) localCoverURL
-           ContentType:  (NSString *) contentType
-          DownloadType:  (NSString *) downloadType
-                   Tag:  (NSString *) tag;
 
 @end

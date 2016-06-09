@@ -36,6 +36,8 @@
     
     self.memberCountLabel.font= [UIFont systemFontOfSize:KSmallFontSize];
     self.contentCountLabel.font= [UIFont systemFontOfSize:KSmallFontSize];
+    self.tagCountLabel.font= [UIFont systemFontOfSize:KSmallFontSize];
+    
     self.dateLabel.font= [UIFont systemFontOfSize:KSmallFontSize];
     self.descriptionLabel.font= [UIFont systemFontOfSize:KNormalFontSize];
     
@@ -106,6 +108,7 @@
     self.nameLabel.text = groupUpdateData.groupData.gp_name;
     self.memberCountLabel.text = groupUpdateData.groupData.gp_member_sum;
     self.contentCountLabel.text = groupUpdateData.groupData.gp_ln_sum;
+    self.tagCountLabel.text = groupUpdateData.groupData.gp_tag_sum;
     
     if([groupUpdateData.recentLessonData.timeLamp containsString:@"-"] &&
        [groupUpdateData.recentLessonData.timeLamp containsString:@":"])

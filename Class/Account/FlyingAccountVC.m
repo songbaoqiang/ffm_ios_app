@@ -19,8 +19,6 @@
 #import "NSString+FlyingExtention.h"
 #import <UIImageView+AFNetworking.h>
 #import "AFHttpTool.h"
-#import "FlyingNowLessonDAO.h"
-#import "FlyingNowLessonData.h"
 #import "FlyingLessonDAO.h"
 #import "FlyingLessonData.h"
 #import "MKStoreKit.h"

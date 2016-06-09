@@ -24,7 +24,7 @@
             ContentURL:  (NSString *) contentURL
            SubtitleURL:  (NSString *) subtitleURL
       PronunciationURL:  (NSString *) pronunciationURL
-                 Level:  (NSString *) level
+              ShareURL:  (NSString *) shareURL
               Duration:  (double)     duration
        DownloadPercent:  (double)     downloadPercent
           DownloadSate:  (BOOL)       downloadState
@@ -46,7 +46,7 @@
         self.BECONTENTURL= contentURL;
         self.BESUBURL    = subtitleURL;
         self.BEPROURL    = pronunciationURL;
-        self.BESHAREURL  = level;
+        self.BESHAREURL  = shareURL;
         self.BEDURATION  = duration;
         
         self.BEDLPERCENT = downloadPercent;
@@ -95,46 +95,6 @@
         [self setlocalData];
     }
     
-    return self;
-}
-
-
-//从本地内容初始化，从网络补充内容
-- (id)initWithLessonID:  (NSString *) lessonID
-            LocalTitle:  (NSString *) localTitle
-       LocalContentURL:  (NSString *) localContentURL
-           LocalSubURL:  (NSString *) localSubURL
-         LocalCoverURL:  (NSString *) localCoverURL
-           ContentType:  (NSString *) contentType
-          DownloadType:  (NSString *) downloadType
-                   Tag:  (NSString *) tag;
-{
-    if(self = [super init]){
-        
-        self.BECONTENTURL= localContentURL;
-        self.BESUBURL    = localSubURL;
-        
-        self.BEDURATION  = 0;
-        self.BEDLPERCENT = 1;
-        self.BEDLSTATE   = NO;
-        
-        self.BELESSONID  = lessonID;
-        self.BETITLE     = localTitle;
-        self.BEDESC      = @"无简介";
-        self.BEIMAGEURL  = localCoverURL;
-        
-        self.BEOFFICIAL  = NO;
-        self.BECONTENTTYPE  = contentType;
-        self.BEDOWNLOADTYPE = downloadType;
-        self.BETAG          = tag;
-        
-        self.BECoinPrice    = 0;
-        self.BEWEBURL       = nil;
-        self.BEISBN         = nil;
-        self.BERELATIVEURL  = nil;
-        
-        [self setlocalData];
-    }
     return self;
 }
 

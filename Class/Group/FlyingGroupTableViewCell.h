@@ -19,6 +19,7 @@
 
 @property (nonatomic, strong) IBOutlet UILabel       * memberCountLabel;
 @property (nonatomic, strong) IBOutlet UILabel       * contentCountLabel;
+@property (nonatomic, strong) IBOutlet UILabel       * tagCountLabel;
 
 @property (nonatomic, strong) IBOutlet UILabel       * dateLabel;
 

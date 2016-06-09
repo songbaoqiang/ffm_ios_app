@@ -140,14 +140,6 @@
                             EndDate:(NSDate *)endDate
                          Completion:(void (^)(BOOL result)) completion;
 
-
-//向服务器获课程统计数据
-+(void) getStatisticDetailWithOpenID:(NSString*) openudid
-                                 Completion:(void (^)(BOOL result)) completion;
-
-+(void) uploadStatisticDetailWithOpenID:(NSString*) openudid
-                                    Completion:(void (^)(BOOL result)) completion;
-
 //////////////////////////////////////////////////////////////
 #pragma  内容相关
 //////////////////////////////////////////////////////////////

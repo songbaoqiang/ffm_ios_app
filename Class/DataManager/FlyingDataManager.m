@@ -10,8 +10,6 @@
 #import "shareDefine.h"
 #import "NSString+FlyingExtention.h"
 #import "iFlyingAppDelegate.h"
-#import "FlyingNowLessonDAO.h"
-#import "FlyingNowLessonData.h"
 #import "FlyingLessonDAO.h"
 #import "FlyingLessonData.h"
 #import "FlyingHttpTool.h"
@@ -21,10 +19,10 @@
 #import "FlyingStatisticData.h"
 #import "FlyingSoundPlayer.h"
 #import "FlyingTaskWordDAO.h"
-#import "FlyingTouchDAO.h"
 #import "FlyingFileManager.h"
 #import "FlyingDownloadManager.h"
 #import "MKStoreKit.h"
+
 
 @implementation FlyingDataManager
 
@@ -283,12 +281,6 @@
                             Completion:^(BOOL result) {
                                 //
                             }];
-    
-    //课程统计信息
-    [FlyingHttpTool getStatisticDetailWithOpenID:openID
-                                      Completion:^(BOOL result) {
-                                           //
-    }];
 }
 
 
@@ -301,17 +293,11 @@
     //个人充值记录
     [[FlyingStatisticDAO new] clearAll];
     
-    //公共课程记录
+    //课程记录
     [[FlyingLessonDAO new] clearAll];
-    
-    //个人课程记录
-    [[FlyingNowLessonDAO new] clearAll];
     
     //单词任务记录
     [[FlyingTaskWordDAO new] clearAll];
-    
-    //点击记录
-    [[FlyingTouchDAO new] clearAll];
 }
 
 //清理缓存
@@ -339,19 +325,8 @@
                            
                            return;
                        }
-                       NSArray * tempArray =  [[[FlyingNowLessonDAO new] selectWithUserID:openID] mutableCopy] ;
-                                              
-                       [tempArray enumerateObjectsUsingBlock:^(FlyingNowLessonData* nowLessonData, NSUInteger idx, BOOL *stop) {
-                           //
-                           
-                           //通知下载中心关闭相关资源，没有下载就是无意义操作
-                           [[FlyingDownloadManager shareInstance] closeAndReleaseDownloaderForID:nowLessonData.BELESSONID];
-                           
-                           //删除数据库本地纪录，资源自动释放
-                           [[FlyingNowLessonDAO new] deleteWithUserID:openID LessonID:nowLessonData.BELESSONID];
-                       }];
                        
-                       tempArray =  [[[FlyingLessonDAO new] select] mutableCopy] ;
+                       NSArray *tempArray =  [[[FlyingLessonDAO new] select] mutableCopy] ;
                        
                        [tempArray enumerateObjectsUsingBlock:^(FlyingLessonData* lessonData, NSUInteger idx, BOOL *stop) {
                            //

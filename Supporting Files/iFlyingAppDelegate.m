@@ -21,14 +21,12 @@
 #import "FlyingLessonDAO.h"
 #import "FlyingLessonData.h"
 #import "FlyingPubLessonData.h"
-#import "FlyingNowLessonDAO.h"
 #import "FlyingTaskWordDAO.h"
 #import "FlyingStatisticDAO.h"
 #import "FlyingContentListVC.h"
 #import "FlyingGuideViewController.h"
 #import <sys/xattr.h>
 #import "FlyingDownloadManager.h"
-#import "FlyingTouchDAO.h"
 #import <Social/Social.h>
 #import "FlyingWebViewController.h"
 #import "FlyingLessonParser.h"
@@ -48,9 +46,7 @@
 #import "AFHttpTool.h"
 #import "FlyingHttpTool.h"
 #import "ReaderViewController.h"
-#import "FlyingNowLessonDAO.h"
 #import "CGPDFDocument.h"
-#import "FlyingNowLessonData.h"
 #import "FileHash.h"
 #import "FlyingDataManager.h"
 #import "FlyingHttpTool.h"
@@ -488,17 +484,11 @@
     
     FlyingLessonDAO * dao=[[FlyingLessonDAO alloc] init];
     NSArray * lessonsBeResumeDownload=[dao selectWithWaittingDownload];
-    
-    FlyingNowLessonDAO * nowDao=[[FlyingNowLessonDAO alloc] init];
-    NSString *openID = [FlyingDataManager getOpenUDID];
-    
+        
     //清理因为异常造成的伪下载任务
     [lessonsBeResumeDownload enumerateObjectsUsingBlock:^(FlyingLessonData * lessonData, NSUInteger idx, BOOL *stop) {
         
-        if (![nowDao selectWithUserID:openID LessonID:lessonData.BELESSONID]) {
-            
-            [dao deleteWithLessonID:lessonData.BELESSONID];
-        }
+        [dao deleteWithLessonID:lessonData.BELESSONID];
     }];
     
     [self closeMyresource];
@@ -746,41 +736,6 @@
     [[NSUserDefaults standardUserDefaults] setObject:[NSKeyedArchiver archivedDataWithRootObject:textColor]
                                               forKey:@"textColor"];
     [[NSUserDefaults standardUserDefaults] synchronize];
-}
-
-//////////////////////////////////////////////////////////////
-#pragma mark - Account and Coin  Related
-//////////////////////////////////////////////////////////////
-- (void) upgrade
-{
-    //金币
-    FlyingStatisticDAO * statistic=[[FlyingStatisticDAO alloc] init];
-    
-    if(![statistic hasQRCount]){
-    
-        [statistic insertQRCount];
-        [statistic insertTimeStamp];
-        NSString *openID = [FlyingDataManager getOpenUDID];
-        [statistic updateUserID:openID];
-        
-        //课程相关数据
-        FlyingNowLessonDAO * currentNowLessonDAO= [[FlyingNowLessonDAO alloc] init];
-        [currentNowLessonDAO updateUserID:openID];
-        
-        //生词数据
-        FlyingTaskWordDAO * currentTaskDAO= [[FlyingTaskWordDAO alloc] init];
-        [currentTaskDAO updateUserID:openID];
-    }
-    
-    //建立点击记录表
-    FlyingTouchDAO * touchDAO =[[FlyingTouchDAO alloc] init];
-    [touchDAO creatTouchTable];
-    
-    //增加课程内容和获取属性
-    FlyingLessonDAO * lessonDAO = [[FlyingLessonDAO alloc] init];
-    [lessonDAO insertContentType];
-    [lessonDAO insertDownloadType];
-    [lessonDAO insertTag];
 }
 
 //////////////////////////////////////////////////////////////

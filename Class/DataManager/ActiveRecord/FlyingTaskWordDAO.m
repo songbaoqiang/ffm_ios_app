@@ -13,12 +13,13 @@
 #import "FMDatabase.h"
 #import "FMDatabaseQueue.h"
 #import "NSString+FlyingExtention.h"
+#import "shareDefine.h"
 
 @implementation FlyingTaskWordDAO
 
 -(NSString *) setTable:(NSString *)sql{
     
-    return [NSString stringWithFormat:sql,  @"BE_TASK_WORD"];
+    return [NSString stringWithFormat:sql, BC_taskword_TableName];
 }
 
 - (FMDatabaseQueue *)dbQueue
